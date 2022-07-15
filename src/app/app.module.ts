@@ -8,7 +8,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
+
 
 
 
@@ -24,7 +24,7 @@ import {MatButtonModule} from '@angular/material/button';
     AppRoutingModule,
     NoopAnimationsModule,
     MatCardModule,
-    MatButtonModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

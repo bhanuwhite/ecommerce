@@ -12,9 +12,9 @@
             </ul>
     </div>
     </div>
-<hr class="horizontal-line">
+<!-- <hr class="horizontal-line"> -->
         <div class="categories-sec">
-            <ul>
+            <ul class="nav-sec-item">
             <li><a href="">Men</a></li>
             <li><a href="">Women</a></li>
             <li><a href="">Electronics</a></li>
@@ -25,7 +25,7 @@
             <li><a href="">Groceries</a></li>
             </ul>
         </div>
-<hr class="sec-horizontal">
+<!-- <hr class="sec-horizontal"> -->
 
 <!--image Section-->
 <div class="img-sec">
@@ -71,6 +71,7 @@
 <!--Sec Section Start-->
 <div class="sec-section">
     <p class="product-sec">Featured Products</p>
+    <hr class="product-line">
     <div class="row">
         <div class="col-lg-3">
             <mat-card>
@@ -80,7 +81,7 @@
                     <p class="price">$600.00</p>
                 </mat-card-content>   
                 <mat-card-footer>
-                    <button mat-raised-button color="primary" class="product-button">ADD TO Cart</button>
+                    <button class="cart-button" type="submit">ADD TO CART</button>
                 </mat-card-footer>
             </mat-card>
         </div>
@@ -89,22 +90,22 @@
             <mat-card-content>
               <a href=""><img src="assets/card2.jpeg"></a>  
                 <p class="product-name"><a href="">APPLE IPHONE 6 64GB</a></p>
-                <p class="price">$600.00</p>
+                <p class="price">$500.00</p>
             </mat-card-content>   
             <mat-card-footer>
-                <button mat-raised-button color="primary" class="product-button">ADD TO Cart</button>
+                <button class="cart-button" type="submit">ADD TO CART</button>
             </mat-card-footer>  
             </mat-card> 
         </div>
         <div class="col-lg-3">
-            <mat-card>
+            <mat-card class="text-center">
                 <mat-card-content>
                     <a href=""><img src="assets/card3.jpeg"></a> 
                     <p class="product-name"><a href="">JOHN PLAYERS Slim Fit Striped...</a></p>
-                    <p class="price">$600.00</p>
+                    <p class="price">$60.00</p>
                 </mat-card-content>   
                 <mat-card-footer>
-                    <button mat-raised-button color="primary" class="product-button">ADD TO Cart</button>
+                    <button class="cart-button" type="submit">ADD TO CART</button>
                 </mat-card-footer>
             </mat-card>
         </div>
@@ -113,10 +114,10 @@
                 <mat-card-content>
                     <a href=""><img src="assets/card4.jpeg"></a> 
                     <p class="product-name"><a href="">NATURE-Linen Shirt-GREEN</a></p>
-                    <p class="price">$600.00</p>
+                    <p class="price">$45.00</p>
                 </mat-card-content>   
                 <mat-card-footer>
-                    <button mat-raised-button color="primary" class="product-button">ADD TO Cart</button>
+                    <button class="cart-button" type="submit">ADD TO CART</button>
                 </mat-card-footer> 
             </mat-card> 
         </div>
@@ -133,12 +134,15 @@
             <mat-card>
                 <mat-card-content class="product-card">
                   <a href=""><img src="assets/sec1.jpeg"></a> 
-                  <div class="product-sticker">New</div> 
+                  <!-- <div class="product-sticker">New</div>  -->
                     <p class="product-name"><a href="">Tomato Round - Vegetable Seeds</a></p>
-                    <p class="price">$600.00</p>
+                    <div class="sticker">
+                    <span class="new-sticker">New</span>   
+                    </div>
+                    <p class="price">$10.00</p>
                 </mat-card-content>   
                 <mat-card-footer>
-                    <button mat-raised-button color="primary" class="product-button">ADD TO Cart</button>
+                    <button class="cart-button" type="submit">ADD TO CART</button>
                 </mat-card-footer>
             </mat-card>
         </div>
@@ -147,10 +151,13 @@
             <mat-card-content>
               <a href=""><img src="assets/sec2.jpeg"></a>  
                 <p class="product-name"><a href="">Auriga Sheesham Wood Bed</a></p>
-                <p class="price">$600.00</p>
+                <div class="sticker">
+                    <span class="new-sticker">New</span>   
+                </div>
+                <p class="price">$555.00</p>
             </mat-card-content>   
             <mat-card-footer>
-                <button mat-raised-button color="primary" class="product-button">ADD TO Cart</button>
+                <button class="cart-button" type="submit">ADD TO CART</button>
             </mat-card-footer>  
             </mat-card> 
         </div>
@@ -159,10 +166,13 @@
                 <mat-card-content>
                     <a href=""><img src="assets/sec3.jpeg"></a> 
                     <p class="product-name"><a href="">Endgame Suit Avengers - Decibe...</a></p>
-                    <p class="price">$600.00</p>
+                    <div class="sticker">
+                        <span class="new-sticker">New</span>   
+                    </div>
+                    <p class="price">$100.00</p>
                 </mat-card-content>   
                 <mat-card-footer>
-                    <button mat-raised-button color="primary" class="product-button">ADD TO Cart</button>
+                    <button class="cart-button" type="submit">ADD TO CART</button>
                 </mat-card-footer>
             </mat-card>
         </div>
@@ -171,10 +181,13 @@
                 <mat-card-content>
                     <a href=""><img src="assets/sec4.jpeg"></a> 
                     <p class="product-name"><a href="">Textured Handbag with Sling St...</a></p>
-                    <p class="price">$600.00</p>
+                    <div class="sticker">
+                        <span class="new-sticker">New</span>   
+                    </div>
+                    <p class="price">$35.00</p>
                 </mat-card-content>   
                 <mat-card-footer>
-                    <button mat-raised-button color="primary" class="product-button">ADD TO Cart</button>
+                    <button class="cart-button" type="submit">ADD TO CART</button>
                 </mat-card-footer> 
             </mat-card> 
         </div>
@@ -182,9 +195,86 @@
     
 </div>
 <!--third Section End-->
-<div class="third-sec">
-    
 
+<div class="third-sec">
+    <div class="row">
+        <div class="col-lg-7">
+                <img class="third-sec-img1" src="assets/image1.png">
+        </div>
+
+        <div class="col-lg-5">
+            <div class="row third-sec-right-img1">
+                <img class="right-img" src="assets/image2.png">
+            </div>
+            <div class="row third-sec-right-img2">
+                <img class="right-img" src="assets/image3.png">  
+            </div>
+        </div>
+    </div>
 </div>
 <!--Third Section End-->
-
+<!--Footer Section-->
+    <div class="footer-sec">
+        <div class="row last-row">
+            <div class="col-lg-3">
+                <div class="list-heading">
+                    <span class="heading">CATEGORIES</span>
+                    <div class="list-items">
+                        <ul>
+                            <li class="list-item1"><a href="">MEN</a></li>
+                            <li class="list-item2"><a href="">WOMEN</a></li>
+                            <li class="list-item2"><a href="">ELECTRONICS</a></li>
+                            <li class="list-item2"><a href="">FURNITURE</a></li>
+                            <li class="list-item2"><a href="">BOOKS</a></li>
+                            <li class="list-item2"><a href="">WATCHES</a></li>
+                            <li class="list-item2"><a href="">JEWELLERY</a></li>
+                            <li class="list-item2"><a href="">GROCERIES</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+               <div class="list-heading">
+                   <span class="heading">QUICK LINKS</span> 
+                   <div class="list-items">
+                    <ul>
+                        <li class="list-item1"><a href="">ABOUT US</a></li>
+                        <li class="list-item2"><a href="">RETURN POLICY</a></li>
+                        <li class="list-item2"><a href="">REFUND POLICY</a></li>
+                        <li class="list-item2"><a href="">TERMS AND CONDITIONS</a></li>
+                        <li class="list-item2"><a href="">TERMS OF USE</a></li>
+                        <li class="list-item2"><a href="">CONTACT US</a></li>
+                    </ul>
+                </div>
+                </div> 
+            </div>
+            <div class="col-lg-3">
+                <div class="list-heading">
+                    <span class="heading">CONNECT WITH US</span>
+                    <div class="list-items">
+                        <ul>
+                            <li class="list-item1"><a href=""><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i><span class="icon">FACEBOOK</span></a></li>
+                            <li class="list-item4"><a href=""><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i><span class="icon">TWITTER</span></a></li>
+                            <li class="list-item4"><a href=""><i class="fa fa-instagram fa-lg" aria-hidden="true"></i><span class="icon">INSTAGRAM</span></a></li>
+                            <li class="list-item4"><a href=""><i class="fa fa-google-plus-square fa-lg" aria-hidden="true"></i><span class="icon">GOOGLE+</span></a></li>
+                            <li class="list-item4"><a href=""><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i><span class="icon">LINKEDIN</span></a></li>
+                        </ul>
+                    </div>
+                </div> 
+            </div>
+            <div class="col-lg-3">
+                <div class="list-heading">
+                    <span class="heading">SUBSCRIBE NEWSLETTER</span>
+                    <div class="list-items">
+                        <ul>
+                            <li class="list-item1"><input type="text" placeholder="Email Address"></li>
+                            <li class="list-item3"><button type="submit">Subscribe</button></li>
+                            <li class="list-item3">LOCALE</li>
+                            <li class="list-item3"><input type="select" placeholder="English" disabled></li>
+                        </ul>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+<!--Footer Section End-->
