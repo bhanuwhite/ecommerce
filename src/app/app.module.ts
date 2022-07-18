@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginPageComponent } from './login-page/login-page.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { CartPageComponent } from './cart-page/cart-page.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
+import { LoginPageComponent } from './Components/login-page/login-page.component';
+import { HomePageComponent } from './Components/home-page/home-page.component';
+import { CartPageComponent } from './Components/cart-page/cart-page.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -17,11 +19,12 @@ import {MatCardModule} from '@angular/material/card';
     AppComponent,
     LoginPageComponent,
     HomePageComponent,
-    CartPageComponent
+    CartPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     NoopAnimationsModule,
     MatCardModule,
   

@@ -1,13 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CartPageComponent } from './cart-page/cart-page.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { LoginPageComponent } from './login-page/login-page.component';
+import { HomePageComponent } from './Components/home-page/home-page.component';
 
 const routes: Routes = [
-  {path: 'login-page', component: LoginPageComponent},
-  {path: 'home-page', component: HomePageComponent},
-  {path: 'cart-page', component: CartPageComponent},
+  { path: 'home-component', component: HomePageComponent },
 
 ];
 

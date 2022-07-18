@@ -1,8 +1,9 @@
 <div class="main-sec">
     <div class="header-sec">
         <div class="left-header"> 
-             <img class="header-img mr-2" src="assets/img1.png">
+             <img class="header-img mr-2" src="assets/images/img1.png">
              <input class="header-input" type="text" placeholder="Search product here"> 
+             <span><i class="fa fa-search" aria-hidden="true"></i></span>
         </div>
         <div class="account-sec">
             <ul>
@@ -33,7 +34,7 @@
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="inner-img">
-            <img class="d-block w-100" src="assets/bimg1.png">
+            <img class="d-block w-100" src="assets/images/bimg1.png">
             </div>
             <div class="forward-button">
 
@@ -47,10 +48,10 @@
 
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="assets/bimg2.png">
+            <img class="d-block w-100" src="assets/images/bimg2.png">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="assets/bimg3.png">
+            <img class="d-block w-100" src="assets/images/bimg3.png">
           </div>
           <div class="carousel-item">
             <img class="d-block w-100" src="assets/bimg4.png">
@@ -74,140 +75,59 @@
     <hr class="product-line">
     <div class="row">
         <div class="col-lg-3">
-            <mat-card>
-                <mat-card-content>
-                  <a href=""><img src="assets/card1.jpeg"></a> 
-                    <p class="product-name"><a href="">Apple iPhone XS (Gold, 64 GB)</a></p>
-                    <p class="price">$600.00</p>
+            <mat-card *ngFor="let product of productsList">
+                <mat-card-content >
+                  <a href=""><img [src]="product.imgurl"></a> 
+                    <p class="product-name"><a href="">{{product.title}}</a></p>
+                    <p class="price">{{product.price}}</p>
                 </mat-card-content>   
                 <mat-card-footer>
                     <button class="cart-button" type="submit">ADD TO CART</button>
                 </mat-card-footer>
-            </mat-card>
+            </mat-card>    
         </div>
-        <div class="col-lg-3">
-           <mat-card>
-            <mat-card-content>
-              <a href=""><img src="assets/card2.jpeg"></a>  
-                <p class="product-name"><a href="">APPLE IPHONE 6 64GB</a></p>
-                <p class="price">$500.00</p>
-            </mat-card-content>   
-            <mat-card-footer>
-                <button class="cart-button" type="submit">ADD TO CART</button>
-            </mat-card-footer>  
-            </mat-card> 
-        </div>
-        <div class="col-lg-3">
-            <mat-card class="text-center">
-                <mat-card-content>
-                    <a href=""><img src="assets/card3.jpeg"></a> 
-                    <p class="product-name"><a href="">JOHN PLAYERS Slim Fit Striped...</a></p>
-                    <p class="price">$60.00</p>
-                </mat-card-content>   
-                <mat-card-footer>
-                    <button class="cart-button" type="submit">ADD TO CART</button>
-                </mat-card-footer>
-            </mat-card>
-        </div>
-        <div class="col-lg-3">
-            <mat-card>
-                <mat-card-content>
-                    <a href=""><img src="assets/card4.jpeg"></a> 
-                    <p class="product-name"><a href="">NATURE-Linen Shirt-GREEN</a></p>
-                    <p class="price">$45.00</p>
-                </mat-card-content>   
-                <mat-card-footer>
-                    <button class="cart-button" type="submit">ADD TO CART</button>
-                </mat-card-footer> 
-            </mat-card> 
-        </div>
+       
     </div>
     
 </div>
 <!--Sec Section End-->
 
 <!--Third Section Start-->
-<div class="third-section">
+ <div class="third-section">
     <p class="product-sec">New Products</p>
     <div class="row">
         <div class="col-lg-3">
-            <mat-card>
-                <mat-card-content class="product-card">
-                  <a href=""><img src="assets/sec1.jpeg"></a> 
-                  <!-- <div class="product-sticker">New</div>  -->
-                    <p class="product-name"><a href="">Tomato Round - Vegetable Seeds</a></p>
+            <mat-card *ngFor="let product of productsList">
+                <mat-card-content class="product-card"  >
+                    <img mat-card-image [src]="product.imgurl">
+                   
+                  <div class="product-sticker">New</div> 
+                    <p class="product-name"><a href="">{{product.title}}</a></p>
                     <div class="sticker">
                     <span class="new-sticker">New</span>   
                     </div>
-                    <p class="price">$10.00</p>
+                    <p class="price">{{product.price}}</p>
                 </mat-card-content>   
                 <mat-card-footer>
                     <button class="cart-button" type="submit">ADD TO CART</button>
                 </mat-card-footer>
             </mat-card>
-        </div>
-        <div class="col-lg-3">
-           <mat-card>
-            <mat-card-content>
-              <a href=""><img src="assets/sec2.jpeg"></a>  
-                <p class="product-name"><a href="">Auriga Sheesham Wood Bed</a></p>
-                <div class="sticker">
-                    <span class="new-sticker">New</span>   
-                </div>
-                <p class="price">$555.00</p>
-            </mat-card-content>   
-            <mat-card-footer>
-                <button class="cart-button" type="submit">ADD TO CART</button>
-            </mat-card-footer>  
-            </mat-card> 
-        </div>
-        <div class="col-lg-3">
-            <mat-card>
-                <mat-card-content>
-                    <a href=""><img src="assets/sec3.jpeg"></a> 
-                    <p class="product-name"><a href="">Endgame Suit Avengers - Decibe...</a></p>
-                    <div class="sticker">
-                        <span class="new-sticker">New</span>   
-                    </div>
-                    <p class="price">$100.00</p>
-                </mat-card-content>   
-                <mat-card-footer>
-                    <button class="cart-button" type="submit">ADD TO CART</button>
-                </mat-card-footer>
-            </mat-card>
-        </div>
-        <div class="col-lg-3">
-            <mat-card>
-                <mat-card-content>
-                    <a href=""><img src="assets/sec4.jpeg"></a> 
-                    <p class="product-name"><a href="">Textured Handbag with Sling St...</a></p>
-                    <div class="sticker">
-                        <span class="new-sticker">New</span>   
-                    </div>
-                    <p class="price">$35.00</p>
-                </mat-card-content>   
-                <mat-card-footer>
-                    <button class="cart-button" type="submit">ADD TO CART</button>
-                </mat-card-footer> 
-            </mat-card> 
-        </div>
-    </div>
-    
-</div>
+        </div>    
+    </div> 
 <!--third Section End-->
 
 <div class="third-sec">
     <div class="row">
         <div class="col-lg-7">
-                <img class="third-sec-img1" src="assets/image1.png">
+                <img class="third-sec-img1" src="assets/images/image1.png">
         </div>
 
         <div class="col-lg-5">
             <div class="row third-sec-right-img1">
-                <img class="right-img" src="assets/image2.png">
+                <img class="right-img" src="assets/images/image2.png">
             </div>
             <div class="row third-sec-right-img2">
-                <img class="right-img" src="assets/image3.png">  
+                <img class="right-img" src="assets/images/image3.png">  
             </div>
         </div>
     </div>
@@ -278,3 +198,4 @@
         </div>
     </div>
 <!--Footer Section End-->
+
