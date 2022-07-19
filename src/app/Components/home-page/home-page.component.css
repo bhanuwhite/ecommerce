@@ -23,9 +23,9 @@ input[type=text] {
     outline: none;
   }
 
-ul li  a:hover {
+ .categories-sec ul li  a:hover {
     background-color: rgb(234, 232, 232);
-  }
+  } 
 .header-sec {
 display: flex;
 justify-content: space-between;
@@ -157,7 +157,7 @@ font-size: 20px;
     margin-bottom: 20px;
 }
 .product-line{
-    width: 76px;
+    width: 55px;
 }
 .line{
     margin-left: 20%;
@@ -165,7 +165,7 @@ font-size: 20px;
 }
 .product-name{
     color: #242424;
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 10px
 }
 .price{
@@ -206,7 +206,7 @@ p a{
 }
  .third-sec-right-img2{
     margin-top: 60px;
-    height: 47%;
+    height: 46%;
     
     
  } 
@@ -249,13 +249,28 @@ ul li {
 .list-item3{
     margin-top: 17px; 
 }
+.list-item3 button{
+    background-color: #000;
+    color: #fff; 
+    font-size: 18px;
+    text-align: center;
+    justify-content: center;
+    transition: background-color 1s;
+}
+
+
+
 input[type=select] {
     box-sizing: border-box;
     border: 3px solid #ccc;
     outline: none;
   }
-input:not([type="button"]):not([type="submit"]):not([type="reset"]):hover, input:not([type="button"]):not([type="submit"]):not([type="reset"]):focus, textarea:hover, textarea:focus, select:hover, select:focus {
+ .list-item1 input:not([type="button"]):not([type="submit"]):not([type="reset"]):hover, input:not([type="button"]):not([type="submit"]):not([type="reset"]):focus, textarea:hover, textarea:focus, select:hover, select:focus {
     border-color: rgb(78, 78, 158);
+    box-shadow: none;
+}
+.header-input input:not([type="button"]):not([type="submit"]):not([type="reset"]):hover, input:not([type="button"]):not([type="submit"]):not([type="reset"]):focus, textarea:hover, textarea:focus, select:hover, select:focus {
+    border-color: #ccc;
     box-shadow: none;
 }
 .icon{

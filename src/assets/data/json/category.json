@@ -1,0 +1,30 @@
+[
+    {
+        "menu": "Men"
+        
+    },
+    {
+        
+        "menu": "Women"
+    },
+    {
+        
+        "menu": "Electronics"
+        
+    },
+    {
+        "menu":"Furniture"
+    },
+    {
+        "menu":"Books"
+    },
+    {
+        "menu":"Watches"
+    },
+    {
+        "menu":"Jewellery"
+    },
+    {
+        "menu":"Groceries"
+    }
+]

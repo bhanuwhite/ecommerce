@@ -16,14 +16,7 @@
 <!-- <hr class="horizontal-line"> -->
         <div class="categories-sec">
             <ul class="nav-sec-item">
-            <li><a href="">Men</a></li>
-            <li><a href="">Women</a></li>
-            <li><a href="">Electronics</a></li>
-            <li><a href="">Furniture</a></li>
-            <li><a href="">Books</a></li>
-            <li><a href="">Watches</a></li>
-            <li><a href="">Jewellery</a></li>
-            <li><a href="">Groceries</a></li>
+                <li *ngFor="let product of items2"><a href="">{{product.menu}}</a></li>
             </ul>
         </div>
 <!-- <hr class="sec-horizontal"> -->
@@ -49,12 +42,39 @@
           </div>
           <div class="carousel-item">
             <img class="d-block w-100" src="assets/images/bimg2.png">
+            <div class="forward-button">
+
+                <div class="left-arrow">
+                    <i class="fa fa-arrow-left"></i>
+                </div>
+                <div class="right-arrow">
+                    <i class="fa fa-arrow-right"></i>
+                </div>
+            </div>
           </div>
           <div class="carousel-item">
             <img class="d-block w-100" src="assets/images/bimg3.png">
+            <div class="forward-button">
+
+                <div class="left-arrow">
+                    <i class="fa fa-arrow-left"></i>
+                </div>
+                <div class="right-arrow">
+                    <i class="fa fa-arrow-right"></i>
+                </div>
+            </div>
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="assets/bimg4.png">
+            <img class="d-block w-100" src="assets/images/bimg4.png">
+            <div class="forward-button">
+
+                <div class="left-arrow">
+                    <i class="fa fa-arrow-left"></i>
+                </div>
+                <div class="right-arrow">
+                    <i class="fa fa-arrow-right"></i>
+                </div>
+            </div>
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -74,19 +94,20 @@
     <p class="product-sec">Featured Products</p>
     <hr class="product-line">
     <div class="row">
-        <div class="col-lg-3">
-            <mat-card *ngFor="let product of productsList">
-                <mat-card-content >
-                  <a href=""><img [src]="product.imgurl"></a> 
+        <div class="col-lg-3" *ngFor="let product of items">
+            <mat-card >
+                <mat-card-content class="product-card">
+                    <img mat-card-image [src]="product.imgurl"> 
                     <p class="product-name"><a href="">{{product.title}}</a></p>
+                    <div class="sticker">   
+                    </div>
                     <p class="price">{{product.price}}</p>
                 </mat-card-content>   
                 <mat-card-footer>
                     <button class="cart-button" type="submit">ADD TO CART</button>
                 </mat-card-footer>
-            </mat-card>    
-        </div>
-       
+            </mat-card>
+        </div>    
     </div>
     
 </div>
@@ -95,16 +116,15 @@
 <!--Third Section Start-->
  <div class="third-section">
     <p class="product-sec">New Products</p>
+    <hr class="product-line">
     <div class="row">
-        <div class="col-lg-3">
-            <mat-card *ngFor="let product of productsList">
+        <div class="col-lg-3" *ngFor="let product of items1">
+            <mat-card >
                 <mat-card-content class="product-card"  >
                     <img mat-card-image [src]="product.imgurl">
-                   
-                  <div class="product-sticker">New</div> 
                     <p class="product-name"><a href="">{{product.title}}</a></p>
                     <div class="sticker">
-                    <span class="new-sticker">New</span>   
+                     <span class="new-sticker">New</span>
                     </div>
                     <p class="price">{{product.price}}</p>
                 </mat-card-content>   

@@ -1,25 +1,25 @@
 [
     { 
         "imgurl": "assets/images/sec1.jpeg",
-        "product-title":"Tomato Round - Vegetable Seeds",
-         "product-price": "$600.00" 
+        "title":"Tomato Round - Vegetable Seeds",
+         "price": "$600.00" 
     },
 
     { 
         "imgurl": "assets/images/sec2.jpeg",
-        "product-title":"Auriga Sheesham Wood Bed",
-         "product-price": "$500.00" 
+        "title":"Auriga Sheesham Wood Bed",
+         "price": "$500.00" 
      },
 
     {
          "imgurl": "assets/images/sec3.jpeg",
-         "product-title":"Endgame Suit Avengers - Decibe...", 
-         "product-price": "$40.00"
+         "title":"Endgame Suit Avengers - Decibe...", 
+         "price": "$40.00"
     },
 
     { 
         "imgurl": "assets/images/sec4.jpeg",
-        "product-title":"Textured Handbag with Sling St...", 
-        "product-price": "$25.00"
+        "title":"Textured Handbag with Sling St...", 
+        "price": "$25.00"
      }
 ]
