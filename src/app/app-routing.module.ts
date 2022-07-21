@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from './Components/home-page/home-page.component';
-
 const routes: Routes = [
-  { path: 'home-component', component: HomePageComponent },
+  { path: '', loadChildren: () => import('./home-page/home-page.module').then(m => m.HomePageModule) },
+  { path: 'LoginPage', loadChildren: () => import('./login-page/login-page.module').then(m => m.LoginPageModule) }
 
 ];
 

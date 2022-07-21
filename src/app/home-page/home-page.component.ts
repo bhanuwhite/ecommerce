@@ -10,11 +10,12 @@ import { categoryData } from 'src/app/shared/dataset';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-
   constructor(public api : ProductService ) { }
   public items!: productData[];
   public items1!: productData[];
   public items2!: categoryData[];
+  isDialogueOpen!: boolean;
+ 
 
   ngOnInit(): void {
     this.api.apiCall().subscribe((data)=>{
@@ -29,8 +30,16 @@ export class HomePageComponent implements OnInit {
       this.items2=data;
       console.log(data,'str')
     });
+    
+
    
+  }
+  toggleDialogueModel(){
+
+    this.isDialogueOpen = !this.isDialogueOpen;
   }
 
 
+
 }
+
