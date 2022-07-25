@@ -4,6 +4,14 @@ export interface productData {
     price: string;
 }
 export interface categoryData {
-    menu: string;
+    name: string;
+    isDropDownMenu: boolean;
+   
 }
+export interface subitem{
+    data1: string;
+    data2: string;
+}
+
+
 

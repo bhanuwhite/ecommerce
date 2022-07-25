@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { productData } from 'src/app/shared/dataset';
+import { productData, subitem } from 'src/app/shared/dataset';
 import { ProductService } from 'src/app/services/product.service';
 import { categoryData } from 'src/app/shared/dataset';
 
@@ -13,7 +13,9 @@ export class HomePageComponent implements OnInit {
   constructor(public api : ProductService ) { }
   public items!: productData[];
   public items1!: productData[];
-  public items2!: categoryData[];
+  public menuitems!: categoryData[];
+  
+
   isDialogueOpen!: boolean;
  
 
@@ -26,10 +28,11 @@ export class HomePageComponent implements OnInit {
       this.items1=data;
       console.log(data,'str')
     });
-    this.api.apiCall2().subscribe((data)=>{
-      this.items2=data;
-      console.log(data,'str')
+    this.api.apiCall2().subscribe((data:any)=>{
+      this.menuitems=data.menuitems;
+      console.log(data,'str, boolean')
     });
+   
     
 
    

@@ -13,7 +13,7 @@
                     <form class="search-icon-form">
                     <input class="search-field" type="text" placeholder="Search product here">
                     <div class="search-icon">
-                        <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                        <button><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>
                     </div>
                     </form>
                 </li>
@@ -29,14 +29,15 @@
                  <div class="modal-dialog">
                     <div class="model-content">
                         <div class="modal-header">
-                           ACCOUNT 
+                           ACCOUNT
+                           
                         </div>
                         <div class="modal-body">
                            Manage Carts, Orders, Wishlist
                         </div>
                         <div class="modal-footer">
-                            <button class="cart-button" type="submit">Sign In</button>
-                            <button class="cart-button" type="submit">Sign Up</button>
+                            <button type="submit">Sign In</button>
+                            <button type="submit">Sign Up</button>
                         </div>
                     </div>
                  </div>   
@@ -47,12 +48,24 @@
     </div>
     <!-- <hr class="horizontal-line"> -->
     <div class="categories-sec">
-        <ul class="nav-sec-item">
-            <li *ngFor="let product of items2"><a href="">{{product.menu}}</a></li>
-            <ul>
-                
-            </ul>
-        </ul>
+        <div class="dropdown">
+             <ul class="nav-sec-item">
+                <li *ngFor="let category of menuitems">
+                    <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"    
+                     *ngIf="!category.isDropDownMenu">{{category.name}}</a>
+
+                    <div *ngIf="category.isDropDownMenu">
+                        <a class="nav-link  dopDown-toggle"  data-toggle="dropDown" aria-haspopup="true"  
+                        aria-expanded="">{{category.name}}</a>
+                            <div class="dropDownMenu" aria-labelledby="navBardropDown">
+                            <!-- <div *ngFor="let subitem of subMenu">
+                                <a class="dropDown-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{subMenu.data1}}</a>
+                            </div> -->
+                        </div>
+                    </div>
+                </li>
+             </ul>
+        </div>
     </div>
     <!-- <hr class="sec-horizontal"> --> 
 

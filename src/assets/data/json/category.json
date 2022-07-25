@@ -1,30 +1,65 @@
-[
     {
-        "menu": "Men"
+        "menuitems":[
+            {   
+                "isDropDownMenu": true,
+                "name": "Men",
+                
+                "subMenu": [
+                        {
+                            "data1": "TopWear"
+                         },
+                        {
+                             "data2": "BottomWear"
+                        }
+                    ]
+            },
+            {
+                "isDropDownMenu": true,
+                "name": "Women",
+                "subMenu": [
+                    {
+                        "data1": "TopWear"
+                     },
+                    {
+                         "data2": "BottomWear"
+                    }
+                ]
+            },
+            {
+                "isDropDownMenu": true,
+                "name": "Electronics",
+                "subMenu": [
+                    {
+                        "data1": "TopWear"
+                     },
+                    {
+                         "data2": "BottomWear"
+                    }
+                ]
+                
+            },
+            {   
+                "isDropDownMenu": false,
+                "name":"Furniture"
+            },
+            {   
+                "isDropDownMenu": false,
+                "name":"Books"
+            },
+            {   
         
-    },
-    {
-        
-        "menu": "Women"
-    },
-    {
-        
-        "menu": "Electronics"
-        
-    },
-    {
-        "menu":"Furniture"
-    },
-    {
-        "menu":"Books"
-    },
-    {
-        "menu":"Watches"
-    },
-    {
-        "menu":"Jewellery"
-    },
-    {
-        "menu":"Groceries"
+                "isDropDownMenu": false,
+                "name":"Watches"
+            },
+            {   
+                "isDropDownMenu": false,
+                "name":"Jewellery"
+            },
+            {
+                "isDropDownMenu": false,
+                "name":"Groceries"
+            }
+        ]
+    
     }
-]
+   

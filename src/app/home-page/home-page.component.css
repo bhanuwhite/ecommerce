@@ -1,5 +1,6 @@
 .main-sec {
-    padding: 10px 30px;
+    padding: 10px 30px; 
+    
 }
 .header-img{
     width: 60px;
@@ -10,11 +11,19 @@
 .logo-container{
     margin-right: 12px;
 }
+
 .left-header{
     display: flex;
     align-items: center;
     margin-bottom: 8px;
 }
+.modal-footer button{
+    border: none;
+    background-color: #21438a ;
+    color: #fff;
+    size: 40px;
+}
+
 .search-field{
     height: 38px;
     border: 2px solid #c7c7c7;
@@ -29,7 +38,7 @@
 .search-icon{
     height: 38px;
     width: 38px;
-    border: 2px solid #c7c7c7;
+    border: 3px solid #c7c7c7;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
     display: inherit;
@@ -143,6 +152,7 @@ bottom: 10px;
 
 } 
 .cart-button{
+    border: none;
     padding: 10px;
     border-radius: 4px;
     background-color: #21438a;
@@ -290,6 +300,9 @@ ul li {
     text-align: center;
     justify-content: center;
     transition: background-color 1s;
+}
+.modal-header{
+    color: #ccc;
 }
 
 input[type=select] {
