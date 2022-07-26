@@ -46,7 +46,7 @@
             </ul>
         </div>
     </div>
-    <!-- <hr class="horizontal-line"> -->
+    
     <div class="categories-sec">
         <div class="dropdown">
              <ul class="nav-sec-item">
@@ -58,16 +58,17 @@
                         <a class="nav-link  dopDown-toggle"  data-toggle="dropDown" aria-haspopup="true"  
                         aria-expanded="">{{category.name}}</a>
                             <div class="dropDownMenu" aria-labelledby="navBardropDown">
-                            <!-- <div *ngFor="let subitem of subMenu">
-                                <a class="dropDown-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{subMenu.data1}}</a>
-                            </div> -->
+                            <div *ngFor="let menuList of category.subMenu">
+                                <a class="dropDown-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{menuList.data1}}</a>
+                                <a class="dropDown-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{menuList.data2}}</a>
+                            </div>
                         </div>
                     </div>
                 </li>
              </ul>
         </div>
     </div>
-    <!-- <hr class="sec-horizontal"> --> 
+
 
     <!--image Section-->
     <div class="img-sec">
