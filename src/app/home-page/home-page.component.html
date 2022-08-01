@@ -25,12 +25,15 @@
                 <li><a href="">Sell</a><span class="item">|</span></li>
                 <li>
                     <i class="fa fa-user mr-2" aria-hidden="true"></i>
-                    <a  (click)="toggleDialogueModel()">Account</a><span class="item">
+                    <a  (click)="toggleDialogueModel()">Account
+                        <span><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+                    </a><span class="item">
                     |</span>
                     <ul class="dropdown-list account guest">
                         <li *ngIf="isDialogueOpen">
                             <div class="modal-dialog">
                                 <label class="account-text">ACCOUNT</label>
+                               
                             </div>
                             <div class="mt-2"><span class="cart-text">Manage Cart, Orders & Wishlist</span></div>
                             <div class="">
