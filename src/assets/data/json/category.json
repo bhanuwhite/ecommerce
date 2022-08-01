@@ -6,11 +6,10 @@
                 
                 "subMenu": [
                         {
-                            "data1": "TopWear"
-                         },
-                        {
-                             "data2": "BottomWear"
-                        }
+                            "data1": "TopWear",
+                            "data2": "BottomWear"
+                         }
+                       
                     ]
             },
             {
@@ -18,11 +17,10 @@
                 "name": "Women",
                 "subMenu": [
                     {
-                        "data1": "TopWear"
-                     },
-                    {
-                         "data2": "BottomWear"
-                    }
+                        "data1": "Westernear",
+                        "data2": "Hand Bag"
+                     }
+                   
                 ]
             },
             {
@@ -30,11 +28,10 @@
                 "name": "Electronics",
                 "subMenu": [
                     {
-                        "data1": "TopWear"
-                     },
-                    {
-                         "data2": "BottomWear"
-                    }
+                        "data1": "Mobiles",
+                        "data2": "Headphones"
+                     }
+                    
                 ]
                 
             },

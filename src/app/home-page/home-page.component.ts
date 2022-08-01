@@ -19,6 +19,8 @@ export class HomePageComponent implements OnInit {
   
 
   isDialogueOpen!: boolean;
+  
+
  
 
   ngOnInit(): void {
@@ -47,6 +49,7 @@ export class HomePageComponent implements OnInit {
 
     this.isDialogueOpen = !this.isDialogueOpen;
   }
+
 
 
 
