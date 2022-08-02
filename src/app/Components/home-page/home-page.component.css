@@ -130,11 +130,53 @@ height: 45px;
     position: relative;
 
 }
+.right-header-menu ul .account {
+    position: absolute;
+    right: 0;
+ }
+ .right-content-menu ul.dropdown-list li {
+    border-right: none;
+    padding: 20px;
+    display: block;
+}
+.dropdown-list .account-text {
+    color: rgb(158, 158, 158);
+    font-weight: 700;   
+    font-size: 15px;
+    
+}
+.dropdown-list .cart-text {
+    font-size: 12px;
+}
+.dropdown-list .btn-sec {
+    margin-top: 15px;
+    background: #21438A !important;
+    color:#fff !important;
+    padding: 8px 16px;
+    text-decoration: none;
+    
+}
 
 .dropdown {
     position: relative;
     display: inline-block;
   }
+  .dropdown-list {
+    display: none;
+    margin-top: 14px;
+    border-radius: 3px;
+    display: none;
+    z-index: 10;
+    text-align: left;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 16%), 0 0 9px 0 rgb(0 0 0 / 16%) !important;
+    background-color: #fff !important;
+
+}
+/* .guest{
+    width: 300px !important;
+ 
+ } */
   
   .dropdown-content {
     display: none; 

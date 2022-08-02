@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
-  { path: '', loadChildren: () => import('./home-page/home-page.module').then(m => m.HomePageModule) },
-  { path: 'LoginPage', loadChildren: () => import('./login-page/login-page.module').then(m => m.LoginPageModule) }
+  { path: '', loadChildren: () => import('./Components/home-page/home-page.module').then(m => m.HomePageModule) },
+  { path: 'LoginPage', loadChildren: () => import('./Components/login-page/login-page.module').then(m => m.LoginPageModule) },
+  { path: 'cartPage', loadChildren: () => import('./Components/cart-page/cart-page.module').then(m => m.CartPageModule) }
 
 ];
 
