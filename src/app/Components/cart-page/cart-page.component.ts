@@ -9,19 +9,21 @@ import { CartServiceService } from 'src/app/services/cart-service.service';
 export class CartPageComponent implements OnInit {
 
   public products: any = [];
-  public grandtotal!: number;
+  public grandTotal:number=0;
   constructor(public cartservice: CartServiceService) { }
 
   ngOnInit(): void {
     this.cartservice.getProducts1()
     .subscribe(res=>{
       this.products = res;
-      this.grandtotal=this.cartservice.getTotalPrice();
+      this.grandTotal = this.cartservice.getTotalPrice();
     })
     this.cartservice.getProducts2()
     .subscribe(res=>{
       this.products = res;
     })
+    
+   
   }
   
 

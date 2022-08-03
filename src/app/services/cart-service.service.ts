@@ -26,6 +26,13 @@ export class CartServiceService {
     this.items.next(this.cartItemList)
     console.log(this.cartItemList);
   }
+  getTotalPrice():number{
+    let grandTotal=0;
+    this.cartItemList.map((a:any)=>{
+      grandTotal += a.total;
+    })
+    return grandTotal;
+  }
   getProducts2(){
     return this.items1.asObservable();
   }
@@ -37,16 +44,21 @@ export class CartServiceService {
   addtoCart2(product:any){
     this.cartItemList.push(product);
     this.items1.next(this.cartItemList)
-    console.log(this.cartItemList);
-    this.getTotalPrice();
+    console.log(this.cartItemList); 
   }
-  getTotalPrice() :number{
-    let grandTotal =0;
-    this.cartItemList.map((a:any)=>{
-      grandTotal +=a.total;
+  removeCartItem(product:any){
+    this.cartItemList.map((a:any,index:any)=>{
+      if(product.id=== a.id){
+        this.cartItemList.splice(index,1);
+      }
     })
-    return grandTotal;
+    this.items.next(this.cartItemList)
   }
+  removeAllCart(){
+    this.cartItemList=[];
+    this.items.next(this.cartItemList);
+  }
+  
   
   
 }

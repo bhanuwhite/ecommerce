@@ -31,7 +31,7 @@ export class HomePageComponent implements OnInit {
       console.log(data,'str')
 
       this.items.forEach((a:any)=>{
-        Object.assign(a, {quantity:1} )
+        Object.assign(a, {quantity:1, total:a.price} )
       });
     });
     this.api.apiCall1().subscribe((data)=>{
