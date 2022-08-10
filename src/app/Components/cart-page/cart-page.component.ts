@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartServiceService } from 'src/app/services/cart-service.service';
+import { productData } from 'src/app/shared/dataset';
 
 @Component({
   selector: 'app-cart-page',
@@ -8,23 +9,46 @@ import { CartServiceService } from 'src/app/services/cart-service.service';
 })
 export class CartPageComponent implements OnInit {
 
-  public products: any = [];
-  public grandTotal:number=0;
-  constructor(public cartservice: CartServiceService) { }
+  public products: any=[];
 
+  
+  
+  
+  constructor(public cartservice: CartServiceService) { }
+ 
   ngOnInit(): void {
     this.cartservice.getProducts1()
-    .subscribe(res=>{
+    .subscribe((res: any)=>{
       this.products = res;
-      this.grandTotal = this.cartservice.getTotalPrice();
     })
     this.cartservice.getProducts2()
-    .subscribe(res=>{
+    .subscribe((res: any)=>{
       this.products = res;
     })
+  }
+
+ inc(item:any){
+  console.log(item.qty)
+  if(item.qty<5){
+    item.qty +=1;
     
-   
+    
+  }
+ 
+ }
+ dec(item:any){
+  console.log(item.qty)
+  if(item.qty>1){
+    item.qty -=1;
   }
   
 
+ }
+
+
 }
+
+
+  
+
+ 

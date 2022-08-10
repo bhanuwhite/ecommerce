@@ -2,21 +2,26 @@
     {
         "imgurl": "assets/images/card1.jpeg",
         "title": "Apple iPhone XS (Gold, 64 GB)",
-        "price": "$600.00"
+        "price": "600.00",
+        "qty": 1
+        
     },
     {
         "imgurl": "assets/images/card2.jpeg",
         "title": "APPLE IPHONE 6 64GB",
-        "price": "$500.00"
+        "price": "500.00",
+        "qty": 1
     },
     {
         "imgurl": "assets/images/card3.jpeg",
         "title": "JOHN PLAYERS Slim Fit Striped...",
-        "price": "$40.00"
+        "price": "40.00",
+        "qty": 1
     },
     {
         "imgurl": "assets/images/card4.jpeg",
         "title": "NATURE-Linen Shirt-GREEN",
-        "price": "$25.00"
+        "price": "25.00",
+        "qty": 1
     }
 ]

@@ -1,5 +1,4 @@
-
-<ng-container *ngIf="true">
+ <ng-container *ngIf="products.length>0">
    <div class="container">
     <div class="card-table">
         <div class="card-product">
@@ -10,7 +9,8 @@
                         <th>Product Image</th>
                         <th>Product Name</th>
                         <th>Product Price</th>
-                        <th>Action</th>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -18,13 +18,15 @@
                         <td>{{i+1}}</td>
                         <td>{{item.title}}</td>
                         <td><img style="width:120px;" src="{{item.imgurl}}"></td>
-                        <td>{{item.price}}</td>
+                        <td class="hidden">${{item.price}}</td>
                         <td>
-                            <button class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                        </td>
+                        <button class="button" (click)="inc(item)"><i class="fa fa-plus-circle" ari a-hidden="true"></i></button>  
+                        <span>{{item.qty}}</span> 
+                         <button class="button" (click)="dec(item)"><i class="fa fa-minus-circle" aria-hidden="true"></i></button>
+                        </td> 
+                        <td>${{item.qty * item.price}}</td>
                     </tr>
-                   
-                </tbody>
+                 </tbody>
             </table>
         </div>
     </div>
@@ -35,7 +37,7 @@
 
 
 
-<ng-container *ngIf="false">
+<ng-container *ngIf="products.length==0">
     <div class="container">
         <div class="card">
             <div class="card-title">

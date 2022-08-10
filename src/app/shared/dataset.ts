@@ -2,6 +2,7 @@ export interface productData {
     imgurl: string;
     title: string;
     price: string;
+    qty: number;
 }
 export interface categoryData {
     name: string;

@@ -31,12 +31,16 @@ export class HomePageComponent implements OnInit {
       console.log(data,'str')
 
       this.items.forEach((a:any)=>{
-        Object.assign(a, {quantity:1, total:a.price} )
+        Object.assign(a, {qty:1} )
       });
     });
     this.api.apiCall1().subscribe((data)=>{
       this.items1=data;
       console.log(data,'str')
+      this.items.forEach((a:any)=>{
+        Object.assign(a, {qty:1} )
+      });
+      
     });
     this.api.apiCall2().subscribe((data:any)=>{
       this.menuitems=data.menuitems;
@@ -47,14 +51,7 @@ export class HomePageComponent implements OnInit {
       console.log(data,'str')
     });
 
-    this.cartservice.getProducts1()
-      .subscribe(data=>{
-        this.totalItem = data.length;
-      })
-      this.cartservice.getProducts1()
-      .subscribe(data=>{
-        this.totalItem = data.length;
-      })
+    
     
    
     
@@ -66,10 +63,16 @@ export class HomePageComponent implements OnInit {
     this.isDialogueOpen = !this.isDialogueOpen;
   }
   addtoCart1(product:any){
+    
+    console.log(product);
       this.cartservice.addtoCart1(product);
+      this.totalItem +=1;
+
   }
   addtoCart2(product:any){
     this.cartservice.addtoCart2(product);
+    this.totalItem +=1;
+
 }
 
 
