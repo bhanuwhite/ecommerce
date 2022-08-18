@@ -8,16 +8,15 @@ import { categoryData } from 'src/app/shared/dataset';
   providedIn: 'root'
 })
 export class ProductService {
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  apiCall():Observable<productData[]> {
-  return this.http.get<productData[]>("assets/data/json/featuredProduct.json");
+  apiCall(): Observable<productData[]> {
+    return this.http.get<productData[]>("assets/data/json/featuredProduct.json");
   }
-  apiCall1():Observable<productData[]> {
+  apiCall1(): Observable<productData[]> {
     return this.http.get<productData[]>("assets/data/json/NewProduct.json");
-    }
-    apiCall2():Observable< categoryData[]> {
-      return this.http.get<categoryData[]>("assets/data/json/category.json");
-      }
-    
+  }
+  apiCall2(): Observable<categoryData> {
+    return this.http.get<categoryData>("assets/data/json/category.json");
+  }
 }

@@ -4,37 +4,37 @@
             <ul class="logo-container">
                 <li>
                     <a href="#">
-                     <img class="header-img mr-2" src="assets/images/img1.png">
+                        <img class="header-img mr-2" src="assets/images/img1.png">
                     </a>
                 </li>
             </ul>
             <ul class="search-container">
                 <li class="search-group">
                     <form class="search-icon-form">
-                    <input class="search-field" type="text" placeholder="Search product here">
-                    <div class="search-icon">
-                        <button><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>
-                    </div>
+                        <input class="search-field" type="text" placeholder="Search product here">
+                        <div class="search-icon">
+                            <button><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>
+                        </div>
                     </form>
                 </li>
             </ul>
-            
+
         </div>
         <div class="account-sec">
             <ul>
                 <li><a href="">Sell</a><span class="item">|</span></li>
                 <li>
                     <i class="fa fa-user mr-2" aria-hidden="true"></i>
-                    <a  (click)="toggleDialogueModel()">Account
+                    <a (click)="toggleDialogueModel()">Account
                         <span><i class="fa fa-caret-down" aria-hidden="true"></i></span>
                     </a><span class="item">
-                    |</span>
+                        |</span>
                 </li>
                 <ul class="dropdown-list account guest">
                     <li *ngIf="isDialogueOpen">
                         <div class="modal-dialog">
                             <label class="account-text">ACCOUNT</label>
-                           
+
                         </div>
                         <div class="mt-2"><span class="cart-text">Manage Cart, Orders & Wishlist</span></div>
                         <div class="">
@@ -43,31 +43,34 @@
                         </div>
                     </li>
                 </ul>
-               
-                <li><i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i><a routerLink="./cartPage">Cart({{totalItem}})</a></li>
+
+                <li><i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i><a
+                        routerLink="./cartPage">Cart({{totalItem}})</a></li>
             </ul>
         </div>
     </div>
-    
+
     <div class="categories-sec">
         <div>
-             <ul class="nav-sec-item">
+            <ul class="nav-sec-item">
                 <li *ngFor="let category of menuitems">
-                    <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"    
-                     *ngIf="!category.isDropDownMenu">{{category.name}}</a>
+                    <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                        *ngIf="!category.isDropDownMenu">{{category.name}}</a>
 
                     <div class="dropdown" *ngIf="category.isDropDownMenu">
-                        <a class="nav-link  dopDown-toggle"  data-toggle="dropDown" aria-haspopup="true"  
-                        aria-expanded="">{{category.name}}</a>
-                            <div class="dropDownMenu" aria-labelledby="navBardropDown">
+                        <a class="nav-link  dopDown-toggle" data-toggle="dropDown" aria-haspopup="true"
+                            aria-expanded="">{{category.name}}</a>
+                        <div class="dropDownMenu" aria-labelledby="navBardropDown">
                             <div class="dropdown-content" *ngFor="let menuList of category.subMenu; let i=index">
-                                <a class="dropDown-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{menuList.data1}}</a>
-                                <a class="dropDown-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">{{menuList.data2}}</a>
+                                <a class="dropDown-item" routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }">{{menuList.data1}}</a>
+                                <a class="dropDown-item" routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }">{{menuList.data2}}</a>
                             </div>
                         </div>
                     </div>
                 </li>
-             </ul>
+            </ul>
         </div>
     </div>
 
@@ -130,6 +133,7 @@
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
                 <span class="sr-only">Previous</span>
             </a>
             <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
