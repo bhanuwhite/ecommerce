@@ -11,17 +11,29 @@
             <ul class="search-container">
                 <li class="search-group">
                     <form class="search-icon-form">
-                        <input class="search-field" type="text" placeholder="Search product here">
+                        <div class="search-bar">
+                            <input class="search-field" type="text" placeholder="Search product here">
+                        </div>
+                        
                         <div class="search-icon">
                             <button><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>
                         </div>
                     </form>
                 </li>
             </ul>
-
-        </div>
+         </div>
         <div class="account-sec">
             <ul>
+                <div class="dropdown lang">
+                <li><a href="" (change)="selectLanguage($event)"><i class="fa fa-flag lang-icon" aria-hidden="true"></i>EN<i class="fa fa-sort-desc lang-icon" aria-hidden="true"></i></a>
+                <div class="dropdown-content">
+                    <a href="">English</a>
+                    <a href="">Hindi</a>
+                </div>
+              
+                </li>
+                </div>
+                
                 <li><a href="">Sell</a><span class="item">|</span></li>
                 <li>
                     <i class="fa fa-user mr-2" aria-hidden="true"></i>

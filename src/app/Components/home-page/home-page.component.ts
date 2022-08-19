@@ -5,6 +5,8 @@ import { ProductService } from 'src/app/services/product.service';
 import { categoryData } from 'src/app/shared/dataset';
 import { menuList } from 'src/app/shared/dataset';
 import { CartServiceService } from 'src/app/services/cart-service.service';
+import {TranslateService} from "@ngx-translate/core";
+
 
 @Component({
   selector: 'app-home-page',
@@ -12,7 +14,10 @@ import { CartServiceService } from 'src/app/services/cart-service.service';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-  constructor(public api: ProductService, public cartservice: CartServiceService) { }
+  constructor(public api: ProductService, public cartservice: CartServiceService, private translate: TranslateService) {
+    translate.setDefaultLang('en');
+    translate.use('en');
+   }
   public items!: productData[];
   public items1!: productData[];
   public menuitems!: categoryData[];
@@ -41,8 +46,11 @@ export class HomePageComponent implements OnInit {
     });
     this.api.apiCall2().subscribe((data: categoryData) => {
       this.subMenu = data.subMenu;
-      console.log(data, 'str')
+      console.log(data, 'str');
     });
+  }
+  public selectLanguage(event:any){
+
   }
   public toggleDialogueModel() {
     this.isDialogueOpen = !this.isDialogueOpen;
@@ -55,5 +63,6 @@ export class HomePageComponent implements OnInit {
     this.cartservice.addtoCart2(product);
     this.totalItem += 1;
   }
+
 }
 
