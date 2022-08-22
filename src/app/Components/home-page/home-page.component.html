@@ -12,32 +12,32 @@
                 <li class="search-group">
                     <form class="search-icon-form">
                         <div class="search-bar">
-                            <input class="search-field" type="text" placeholder="Search product here">
+                            <input class="search-field" type="text">
                         </div>
-                        
-                        <div class="search-icon">
+                    <div class="search-icon">
                             <button><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>
                         </div>
                     </form>
                 </li>
             </ul>
-         </div>
+        </div>
         <div class="account-sec">
             <ul>
                 <div class="dropdown lang">
-                <li><a href="" (change)="selectLanguage($event)"><i class="fa fa-flag lang-icon" aria-hidden="true"></i>EN<i class="fa fa-sort-desc lang-icon" aria-hidden="true"></i></a>
-                <div class="dropdown-content">
-                    <a href="">English</a>
-                    <a href="">Hindi</a>
+                    <li id="language"><a href=""><i class="fa fa-flag lang-icon" aria-hidden="true"></i>EN<i
+                                class="fa fa-sort-desc lang-icon" aria-hidden="true"></i></a>
+                        <div class="dropdown-content">
+                            <a (click)="selectLanguage('en')">English</a>
+                            <a (click)="selectLanguage('hn')">Hindi</a>
+                            <a (click)="selectLanguage('fr')">French</a>
+
+                        </div>
+                    </li>
                 </div>
-              
-                </li>
-                </div>
-                
-                <li><a href="">Sell</a><span class="item">|</span></li>
+                <li><a href="">{{'sell'|translate}}</a><span class="item">|</span></li>
                 <li>
                     <i class="fa fa-user mr-2" aria-hidden="true"></i>
-                    <a (click)="toggleDialogueModel()">Account
+                    <a (click)="toggleDialogueModel()">{{'account'|translate}}
                         <span><i class="fa fa-caret-down" aria-hidden="true"></i></span>
                     </a><span class="item">
                         |</span>
@@ -45,7 +45,7 @@
                 <ul class="dropdown-list account guest">
                     <li *ngIf="isDialogueOpen">
                         <div class="modal-dialog">
-                            <label class="account-text">ACCOUNT</label>
+                            <label class="account-text"></label>
 
                         </div>
                         <div class="mt-2"><span class="cart-text">Manage Cart, Orders & Wishlist</span></div>
@@ -57,7 +57,7 @@
                 </ul>
 
                 <li><i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i><a
-                        routerLink="./cartPage">Cart({{totalItem}})</a></li>
+                        routerLink="./cartPage">{{'cart'|translate}}({{totalItem}})</a></li>
             </ul>
         </div>
     </div>
@@ -67,17 +67,16 @@
             <ul class="nav-sec-item">
                 <li *ngFor="let category of menuitems">
                     <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-                        *ngIf="!category.isDropDownMenu">{{category.name}}</a>
-
+                        *ngIf="!category.isDropDownMenu">{{category.name.toLowerCase()|translate}}</a>
                     <div class="dropdown" *ngIf="category.isDropDownMenu">
                         <a class="nav-link  dopDown-toggle" data-toggle="dropDown" aria-haspopup="true"
-                            aria-expanded="">{{category.name}}</a>
+                            aria-expanded="">{{category.name.toLowerCase()|translate}}</a>
                         <div class="dropDownMenu" aria-labelledby="navBardropDown">
                             <div class="dropdown-content" *ngFor="let menuList of category.subMenu; let i=index">
                                 <a class="dropDown-item" routerLinkActive="active"
-                                    [routerLinkActiveOptions]="{ exact: true }">{{menuList.data1}}</a>
+                                    [routerLinkActiveOptions]="{ exact: true }">{{menuList.data1|translate}}</a>
                                 <a class="dropDown-item" routerLinkActive="active"
-                                    [routerLinkActiveOptions]="{ exact: true }">{{menuList.data2}}</a>
+                                    [routerLinkActiveOptions]="{ exact: true }">{{menuList.data2|translate}}</a>
                             </div>
                         </div>
                     </div>
@@ -158,20 +157,21 @@
 
     <!--Sec Section Start-->
     <div class="sec-section">
-        <p class="product-sec">Featured Products</p>
+        <p class="product-sec">{{'fproducts'| translate}}</p>
         <hr class="product-line">
         <div class="row">
             <div class="col-lg-3" *ngFor="let product of items">
                 <mat-card>
                     <mat-card-content class="product-card">
                         <img mat-card-image [src]="product.imgurl">
-                        <p class="product-name"><a href="">{{product.title}}</a></p>
+                        <p class="product-name"><a href=""></a>{{product.title}}</p>
                         <div class="sticker">
                         </div>
                         <p class="price">${{product.price}}</p>
                     </mat-card-content>
                     <mat-card-footer>
-                        <button class="cart-button" type="submit" (click)=addtoCart1(product)>ADD TO CART</button>
+                        <button class="cart-button" type="submit" (click)=addtoCart1(product)>{{'addcart'|
+                            translate}}</button>
                     </mat-card-footer>
                 </mat-card>
             </div>
@@ -182,21 +182,22 @@
 
     <!--Third Section Start-->
     <div class="third-section">
-        <p class="product-sec">New Products</p>
+        <p class="product-sec">{{'nproducts'| translate}}</p>
         <hr class="product-line">
         <div class="row">
             <div class="col-lg-3" *ngFor="let product of items1">
                 <mat-card>
                     <mat-card-content class="product-card">
                         <img mat-card-image [src]="product.imgurl">
-                        <p class="product-name"><a href="">{{product.title}}</a></p>
+                        <p class="product-name"><a href="">{{product.title|translate}}</a></p>
                         <div class="sticker">
-                            <span class="new-sticker">New</span>
+                            <span class="new-sticker">{{'new'|translate}}</span>
                         </div>
                         <p class="price">${{product.price}}</p>
                     </mat-card-content>
                     <mat-card-footer>
-                        <button class="cart-button" type="submit" (click)=addtoCart2(product)>ADD TO CART</button>
+                        <button class="cart-button" type="submit" (click)=addtoCart2(product)>{{'addcart'|
+                            translate}}</button>
                     </mat-card-footer>
                 </mat-card>
             </div>
@@ -225,64 +226,69 @@
             <div class="row last-row">
                 <div class="col-lg-3">
                     <div class="list-heading">
-                        <span class="heading">CATEGORIES</span>
+                        <span class="heading">{{'categories'|translate}}</span>
                         <div class="list-items">
                             <ul>
-                                <li class="list-item1"><a href="">MEN</a></li>
-                                <li class="list-item2"><a href="">WOMEN</a></li>
-                                <li class="list-item2"><a href="">ELECTRONICS</a></li>
-                                <li class="list-item2"><a href="">FURNITURE</a></li>
-                                <li class="list-item2"><a href="">BOOKS</a></li>
-                                <li class="list-item2"><a href="">WATCHES</a></li>
-                                <li class="list-item2"><a href="">JEWELLERY</a></li>
-                                <li class="list-item2"><a href="">GROCERIES</a></li>
+                                <li class="list-item1"><a href="">{{'men'|translate}}</a></li>
+                                <li class="list-item2"><a href="">{{'women'|translate}}</a></li>
+                                <li class="list-item2"><a href="">{{'electronics'|translate}}</a></li>
+                                <li class="list-item2"><a href="">{{'furniture'|translate}}</a></li>
+                                <li class="list-item2"><a href="">{{'books'|translate}}</a></li>
+                                <li class="list-item2"><a href="">{{'watches'|translate}}</a></li>
+                                <li class="list-item2"><a href="">{{'jewellery'|translate}}</a></li>
+                                <li class="list-item2"><a href="">{{'groceries'|translate}}</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="list-heading">
-                        <span class="heading">QUICK LINKS</span>
+                        <span class="heading">{{'qlinks'|translate}}</span>
                         <div class="list-items">
                             <ul>
-                                <li class="list-item1"><a href="">ABOUT US</a></li>
-                                <li class="list-item2"><a href="">RETURN POLICY</a></li>
-                                <li class="list-item2"><a href="">REFUND POLICY</a></li>
-                                <li class="list-item2"><a href="">TERMS AND CONDITIONS</a></li>
-                                <li class="list-item2"><a href="">TERMS OF USE</a></li>
-                                <li class="list-item2"><a href="">CONTACT US</a></li>
+                                <li class="list-item1"><a href="">{{'aboutus'|translate}}</a></li>
+                                <li class="list-item2"><a href="">{{'rpolicy'|translate}}</a></li>
+                                <li class="list-item2"><a href="">{{'refundpolicy'|translate}}</a></li>
+                                <li class="list-item2"><a href="">{{'termscon'|translate}}</a></li>
+                                <li class="list-item2"><a href="">{{'termsuse'|translate}}</a></li>
+                                <li class="list-item2"><a href="">{{'contactus'|translate}}</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="list-heading">
-                        <span class="heading">CONNECT WITH US</span>
+                        <span class="heading">{{'contactwithus'|translate}}</span>
                         <div class="list-items">
                             <ul>
                                 <li class="list-item1"><a href=""><i class="fa fa-facebook-official fa-lg"
-                                            aria-hidden="true"></i><span class="icon">FACEBOOK</span></a></li>
+                                            aria-hidden="true"></i><span class="icon">{{'fac'|translate}}</span></a>
+                                </li>
                                 <li class="list-item4"><a href=""><i class="fa fa-twitter-square fa-lg"
-                                            aria-hidden="true"></i><span class="icon">TWITTER</span></a></li>
+                                            aria-hidden="true"></i><span class="icon">{{'twi'|translate}}</span></a>
+                                </li>
                                 <li class="list-item4"><a href=""><i class="fa fa-instagram fa-lg"
-                                            aria-hidden="true"></i><span class="icon">INSTAGRAM</span></a></li>
+                                            aria-hidden="true"></i><span class="icon">{{'insta'|translate}}</span></a>
+                                </li>
                                 <li class="list-item4"><a href=""><i class="fa fa-google-plus-square fa-lg"
-                                            aria-hidden="true"></i><span class="icon">GOOGLE+</span></a></li>
+                                            aria-hidden="true"></i><span class="icon">{{'google'|translate}}</span></a>
+                                </li>
                                 <li class="list-item4"><a href=""><i class="fa fa-linkedin-square fa-lg"
-                                            aria-hidden="true"></i><span class="icon">LINKEDIN</span></a></li>
+                                            aria-hidden="true"></i><span class="icon">{{'link'|translate}}</span></a>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="list-heading">
-                        <span class="heading">SUBSCRIBE NEWSLETTER</span>
+                        <span class="heading">{{'subsnews'|translate}}</span>
                         <div class="list-items">
                             <ul>
-                                <li class="list-item1"><input type="text" placeholder="Email Address"></li>
-                                <li class="list-item3"><button type="submit">Subscribe</button></li>
-                                <li class="list-item3">LOCALE</li>
-                                <li class="list-item3"><input type="select" placeholder="English" disabled></li>
+                                <li class="list-item1"><input type="text" placeholder="{{'eadd'|translate}}"></li>
+                                <li class="list-item3"><button type="submit">{{'subscribe'|translate}}</button></li>
+                                <li class="list-item3">{{'locale'|translate}}</li>
+                                <li class="list-item3"><input type="select" placeholder="{{'eng'|translate}}" disabled></li>
                             </ul>
                         </div>
                     </div>

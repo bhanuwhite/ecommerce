@@ -14,10 +14,8 @@ import {TranslateService} from "@ngx-translate/core";
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-  constructor(public api: ProductService, public cartservice: CartServiceService, private translate: TranslateService) {
-    translate.setDefaultLang('en');
-    translate.use('en');
-   }
+  constructor(public api: ProductService, public cartservice: CartServiceService, public translateService: TranslateService) {
+}
   public items!: productData[];
   public items1!: productData[];
   public menuitems!: categoryData[];
@@ -26,6 +24,9 @@ export class HomePageComponent implements OnInit {
   public isDialogueOpen!: boolean;
 
   ngOnInit(): void {
+    this.translateService.addLangs(['en', 'hn']);
+    this.translateService.setDefaultLang('en');
+    this.translateService.use('en')
     this.api.apiCall().subscribe((data) => {
       this.items = data;
       console.log(data, 'str')
@@ -49,9 +50,10 @@ export class HomePageComponent implements OnInit {
       console.log(data, 'str');
     });
   }
-  public selectLanguage(event:any){
-
-  }
+  public selectLanguage(lang:any){
+    this.translateService.use(lang)
+    console.log(lang);
+}
   public toggleDialogueModel() {
     this.isDialogueOpen = !this.isDialogueOpen;
   }
@@ -63,6 +65,5 @@ export class HomePageComponent implements OnInit {
     this.cartservice.addtoCart2(product);
     this.totalItem += 1;
   }
-
 }
 

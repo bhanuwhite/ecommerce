@@ -7,7 +7,7 @@ import { HomePageRoutingModule } from './home-page-routing.module';
 import { HomePageComponent } from './home-page.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -18,16 +18,9 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
     HomePageRoutingModule,
     MatCardModule,
     HttpClientModule,
-    TranslateModule.forRoot({
-      defaultLanguage: 'English',
-      loader:{
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient,]
-      }
-    })
-
-  ]
+    TranslateModule,
+    
+ ]
 })
 export class HomePageModule { }
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {

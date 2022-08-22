@@ -26,15 +26,6 @@
     color: #fff;
     size: 40px;
 }
-header .et-mega-search {
-    width: 350px;
-}
-.search-bar{
-    border: 2px solid #c7c7c7;
-    display: flex;
-
-    
-}
 .search-field {
     height: 38px;
     width: 100%;
