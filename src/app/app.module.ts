@@ -6,14 +6,12 @@ import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { LangTranslateModule } from './lang-translate/lang-translate.module';
-
-
-
-
+import { PopUPComponent } from './Components/pop-up/pop-up.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    PopUPComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,8 +19,6 @@ import { LangTranslateModule } from './lang-translate/lang-translate.module';
     HttpClientModule,
     NoopAnimationsModule,
     LangTranslateModule,
-    
-  
   ],
   providers: [],
   bootstrap: [AppComponent]

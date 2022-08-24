@@ -8,6 +8,7 @@ import { HomePageComponent } from './home-page.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { TranslateModule } from '@ngx-translate/core';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -19,8 +20,8 @@ import { TranslateModule } from '@ngx-translate/core';
     MatCardModule,
     HttpClientModule,
     TranslateModule,
-    
- ]
+    MatDialogModule
+]
 })
 export class HomePageModule { }
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {

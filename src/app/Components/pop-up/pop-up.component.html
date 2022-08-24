@@ -1,0 +1,16 @@
+<h3>Choose your location</h3>
+<p>Select a delivery location to see product availability and delivery options</p>
+<button type="button" class="btn btn-warning">Sign In to see your address</button>
+<p>or enter an Indian Pin Code</p>
+<div class="form">
+    <div class="row">
+        <div class="col-lg-6">
+            <input type="text" #box >
+        </div>
+            <div class="col-lg-6">
+                <button type="button"(click)="getUserLocationData(box.value)"  class="btn btn-light" >Apply</button>
+            </div>
+        
+        </div>
+    </div>
+  

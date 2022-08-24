@@ -5,7 +5,10 @@ import { ProductService } from 'src/app/services/product.service';
 import { categoryData } from 'src/app/shared/dataset';
 import { menuList } from 'src/app/shared/dataset';
 import { CartServiceService } from 'src/app/services/cart-service.service';
-import {TranslateService} from "@ngx-translate/core";
+import { TranslateService} from "@ngx-translate/core";
+import { PopUPComponent } from '../pop-up/pop-up.component';
+import { MatDialog } from '@angular/material/dialog';
+
 
 
 @Component({
@@ -14,7 +17,8 @@ import {TranslateService} from "@ngx-translate/core";
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-  constructor(public api: ProductService, public cartservice: CartServiceService, public translateService: TranslateService) {
+
+  constructor(public api: ProductService, public cartservice: CartServiceService, public translateService: TranslateService, private dialogRef: MatDialog) {
 }
   public items!: productData[];
   public items1!: productData[];
@@ -65,5 +69,8 @@ export class HomePageComponent implements OnInit {
     this.cartservice.addtoCart2(product);
     this.totalItem += 1;
   }
+  public openDialog(){
+    this.dialogRef.open(PopUPComponent);
+}
 }
 

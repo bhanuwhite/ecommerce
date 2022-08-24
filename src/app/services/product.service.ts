@@ -8,7 +8,9 @@ import { categoryData } from 'src/app/shared/dataset';
   providedIn: 'root'
 })
 export class ProductService {
+
   constructor(private http: HttpClient) { }
+  
 
   apiCall(): Observable<productData[]> {
     return this.http.get<productData[]>("assets/data/json/featuredProduct.json");
@@ -19,4 +21,6 @@ export class ProductService {
   apiCall2(): Observable<categoryData> {
     return this.http.get<categoryData>("assets/data/json/category.json");
   }
+
+  
 }
