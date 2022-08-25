@@ -1,13 +1,15 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { productData } from 'src/app/shared/dataset';
 import { ProductService } from 'src/app/services/product.service';
 import { categoryData } from 'src/app/shared/dataset';
 import { menuList } from 'src/app/shared/dataset';
 import { CartServiceService } from 'src/app/services/cart-service.service';
-import { TranslateService} from "@ngx-translate/core";
+import { TranslateService } from "@ngx-translate/core";
 import { PopUPComponent } from '../pop-up/pop-up.component';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { inject } from '@angular/core/testing';
+
 
 
 
@@ -18,8 +20,8 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(public api: ProductService, public cartservice: CartServiceService, public translateService: TranslateService, private dialogRef: MatDialog) {
-}
+  constructor(public api: ProductService, public cartservice: CartServiceService, public translateService: TranslateService, private dialogRef: MatDialog, @Inject(MAT_DIALOG_DATA) public data: {}) {
+  }
   public items!: productData[];
   public items1!: productData[];
   public menuitems!: categoryData[];
@@ -53,11 +55,12 @@ export class HomePageComponent implements OnInit {
       this.subMenu = data.subMenu;
       console.log(data, 'str');
     });
+
   }
-  public selectLanguage(lang:any){
+  public selectLanguage(lang: any) {
     this.translateService.use(lang)
     console.log(lang);
-}
+  }
   public toggleDialogueModel() {
     this.isDialogueOpen = !this.isDialogueOpen;
   }
@@ -69,8 +72,9 @@ export class HomePageComponent implements OnInit {
     this.cartservice.addtoCart2(product);
     this.totalItem += 1;
   }
-  public openDialog(){
+  public openDialog() {
     this.dialogRef.open(PopUPComponent);
-}
+  }
+
 }
 

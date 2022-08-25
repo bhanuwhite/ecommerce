@@ -18,7 +18,11 @@ ngOnInit(): void {}
   public getUserLocationData(pincode:string){
     this.location.getUserLocationData(pincode).subscribe(data=>{
       console.log("data",data);
-       this.userLocationData=data;  
+      data:{
+        
+      }
     })
-  }
+    
+ }
+
 }
