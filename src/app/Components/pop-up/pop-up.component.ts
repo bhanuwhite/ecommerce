@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentLocationService } from 'src/app/services/current-location.service';
+import { SharedUserLocationDataService } from 'src/app/services/shared-user-location-data.service';
 
 
 @Component({
@@ -8,21 +9,21 @@ import { CurrentLocationService } from 'src/app/services/current-location.servic
   styleUrls: ['./pop-up.component.css']
 })
 export class PopUPComponent implements OnInit {
-  userLocationData!: Object;
+  userLocationData!: string;
+  data!: any;
 
-  constructor(public location: CurrentLocationService) {
+  
+
+  constructor(public currentLocationService: CurrentLocationService, private sharedUserLocationData: SharedUserLocationDataService) {
     
    }
 ngOnInit(): void {}
 
   public getUserLocationData(pincode:string){
-    this.location.getUserLocationData(pincode).subscribe(data=>{
-      console.log("data",data);
-      data:{
-        
-      }
+    this.currentLocationService.getUserLocationData(pincode).subscribe(data=>{
+      this.data = data;
+      this.sharedUserLocationData.sendLocation(data);
     })
-    
- }
+  }
 
 }

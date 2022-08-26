@@ -7,11 +7,8 @@ import { menuList } from 'src/app/shared/dataset';
 import { CartServiceService } from 'src/app/services/cart-service.service';
 import { TranslateService } from "@ngx-translate/core";
 import { PopUPComponent } from '../pop-up/pop-up.component';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { inject } from '@angular/core/testing';
-
-
-
+import { MatDialog } from '@angular/material/dialog';
+import { SharedUserLocationDataService } from 'src/app/services/shared-user-location-data.service';
 
 @Component({
   selector: 'app-home-page',
@@ -19,15 +16,20 @@ import { inject } from '@angular/core/testing';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-
-  constructor(public api: ProductService, public cartservice: CartServiceService, public translateService: TranslateService, private dialogRef: MatDialog, @Inject(MAT_DIALOG_DATA) public data: {}) {
-  }
+  userLocationData: any;
   public items!: productData[];
   public items1!: productData[];
   public menuitems!: categoryData[];
   public subMenu!: menuList[];
   public totalItem: number = 0;
   public isDialogueOpen!: boolean;
+
+  constructor(public api: ProductService,
+    public cartservice: CartServiceService,
+    public translateService: TranslateService,
+    private dialogRef: MatDialog,
+    private sharedUserLocationData: SharedUserLocationDataService) {
+  }
 
   ngOnInit(): void {
     this.translateService.addLangs(['en', 'hn']);
@@ -55,9 +57,15 @@ export class HomePageComponent implements OnInit {
       this.subMenu = data.subMenu;
       console.log(data, 'str');
     });
-
   }
-  public selectLanguage(lang: any) {
+ public getUserLocationData() {
+    this.sharedUserLocationData.userLocation$
+      .subscribe((userLocation) => {
+        this.userLocationData = userLocation;
+        console.log(this.userLocationData);
+      });
+  }
+ public selectLanguage(lang: any) {
     this.translateService.use(lang)
     console.log(lang);
   }
@@ -75,6 +83,5 @@ export class HomePageComponent implements OnInit {
   public openDialog() {
     this.dialogRef.open(PopUPComponent);
   }
-
 }
 

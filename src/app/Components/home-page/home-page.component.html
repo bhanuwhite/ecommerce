@@ -24,11 +24,11 @@
         <div class="account-sec">
             <ul>
                 <div class="location">
-                    <li>
-                        <a (click)="openDialog()">
+                    <li *ngFor="let location of userLocationData">
+                        <a (click)="openDialog()" >
                             <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                            <p>Hello</p>
-                            <p class="loc-text">Select your address <p>
+                            <p>{{location.pincode}}</p>
+                            <p class="loc-text">{{location.city}}<p> 
                          </a>
                     </li>
                 </div>
