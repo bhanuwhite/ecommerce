@@ -16,7 +16,7 @@ import { SharedUserLocationDataService } from 'src/app/services/shared-user-loca
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-  userLocationData: any;
+  userLocationData!: any;
   public items!: productData[];
   public items1!: productData[];
   public menuitems!: categoryData[];
@@ -57,15 +57,16 @@ export class HomePageComponent implements OnInit {
       this.subMenu = data.subMenu;
       console.log(data, 'str');
     });
+    this.getUserLocationData();
   }
  public getUserLocationData() {
     this.sharedUserLocationData.userLocation$
       .subscribe((userLocation) => {
-        this.userLocationData = userLocation;
+       this.userLocationData = userLocation;
         console.log(this.userLocationData);
       });
   }
- public selectLanguage(lang: any) {
+ public selectLanguage(lang: string) {
     this.translateService.use(lang)
     console.log(lang);
   }
