@@ -4,12 +4,19 @@
 <p>or enter an Indian Pin Code</p>
 <div class="form">
     <div class="row">
-        <div class="col-lg-6">
-            <input type="text" #box>
+        <div class=" form-group col-lg-6">
+            <form [formGroup]="pincodeform">
+            <input formControlName="pinCode" type="text" class="form-control" name="pinCode" required minlength="6" #box>
+            <div *ngIf="pincodeform.errors?.['required']">
+                Pincode is required.
+              </div>
+              <div *ngIf="pincodeform.errors?.['minlength']">
+                PinCode must be at least 6 digits.
+              </div>
+            </form>
         </div>
         <div class="col-lg-6">
             <button type="button" (click)="getUserLocationData(box.value)" class="btn btn-light">Apply</button>
         </div>
     </div>
 </div>
-

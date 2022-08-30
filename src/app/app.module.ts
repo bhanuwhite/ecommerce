@@ -7,6 +7,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { LangTranslateModule } from './lang-translate/lang-translate.module';
 import { PopUPComponent } from './Components/pop-up/pop-up.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { PopUPComponent } from './Components/pop-up/pop-up.component';
     HttpClientModule,
     NoopAnimationsModule,
     LangTranslateModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

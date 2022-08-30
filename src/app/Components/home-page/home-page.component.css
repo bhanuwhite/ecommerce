@@ -48,6 +48,11 @@
     border-bottom-right-radius: 3px;
     display: inherit;
 }
+.header-icon{
+    position: absolute;
+    left: 13px;
+    top: 13px;
+}
 
 .search-group {
     display: inline-flex;
@@ -55,6 +60,7 @@
 
 .search-icon-form {
     display: inherit;
+    position: relative;
 }
 
 .search-icon button {
@@ -94,6 +100,10 @@ input[type=text] {
 .dropdown {
     position: relative;
     display: inline-block;
+  }
+  .location{
+    margin-right: 20px;
+    margin-top: 15px;
   }
 .dropdown-content {
     display: none;
@@ -143,6 +153,9 @@ input[type=text] {
 }
 
 .account-sec span {
+    margin: 0 10px;
+}
+.dropdown-lang span{
     margin: 0 10px;
 }
 

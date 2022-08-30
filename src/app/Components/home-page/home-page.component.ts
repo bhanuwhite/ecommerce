@@ -30,7 +30,6 @@ export class HomePageComponent implements OnInit {
     private dialogRef: MatDialog,
     private sharedUserLocationData: SharedUserLocationDataService) {
   }
-
   ngOnInit(): void {
     this.translateService.addLangs(['en', 'hn']);
     this.translateService.setDefaultLang('en');
@@ -59,14 +58,14 @@ export class HomePageComponent implements OnInit {
     });
     this.getUserLocationData();
   }
- public getUserLocationData() {
+  public getUserLocationData() {
     this.sharedUserLocationData.userLocation$
       .subscribe((userLocation) => {
-       this.userLocationData = userLocation;
+        this.userLocationData = userLocation;
         console.log(this.userLocationData);
       });
   }
- public selectLanguage(lang: string) {
+  public selectLanguage(lang: string) {
     this.translateService.use(lang)
     console.log(lang);
   }

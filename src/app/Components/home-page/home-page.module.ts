@@ -20,7 +20,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatCardModule,
     HttpClientModule,
     TranslateModule,
-    MatDialogModule
+    MatDialogModule,
+    
 ]
 })
 export class HomePageModule { }
