@@ -11,6 +11,7 @@ export class CartServiceService {
   public cartItemList: productData[] = [];
   public items = new BehaviorSubject<productData[]>([]);
   public items1 = new BehaviorSubject<productData[]>([]);
+  public search = new BehaviorSubject<string>("");
 
 
   constructor() { }
@@ -35,6 +36,7 @@ export class CartServiceService {
   addtoCart2(product: productData) {
     this.cartItemList.push(product);
     this.items1.next(this.cartItemList);
+    
   }
 }
 

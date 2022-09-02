@@ -1,0 +1,33 @@
+{
+  "posts": [
+    {
+      "imgurl": "assets/images/card1.jpeg",
+      "title": "Apple iPhone XS (Gold, 64 GB)",
+      "price": "600.00",
+      "qty": 1
+    },
+    {
+      "imgurl": "assets/images/card1.jpeg",
+      "title": "Apple iPhone XS (Gold, 64 GB)",
+      "price": "600.00",
+      "qty": 1
+    },
+    {
+      "imgurl": "assets/images/card1.jpeg",
+      "title": "Apple iPhone XS (Gold, 64 GB)",
+      "price": "600.00",
+      "qty": 1
+    }
+    
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

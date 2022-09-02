@@ -23,6 +23,9 @@ export class HomePageComponent implements OnInit {
   public subMenu!: menuList[];
   public totalItem: number = 0;
   public isDialogueOpen!: boolean;
+  selectedTeam: any;
+  searchKey: string ="";
+  searchTerm: string ="";
 
   constructor(public api: ProductService,
     public cartservice: CartServiceService,
@@ -74,14 +77,19 @@ export class HomePageComponent implements OnInit {
   }
   public addtoCart1(product: productData) {
     this.cartservice.addtoCart1(product);
-    this.totalItem += 1;
   }
   public addtoCart2(product: productData) {
     this.cartservice.addtoCart2(product);
-    this.totalItem += 1;
   }
   public openDialog() {
     this.dialogRef.open(PopUPComponent);
+  }
+  public search(event:any){
+    this.searchTerm = (event.target as HTMLInputElement).value;
+    console.log(this.searchTerm);
+    this.cartservice.search.next(this.searchTerm);
+
+    
   }
 }
 

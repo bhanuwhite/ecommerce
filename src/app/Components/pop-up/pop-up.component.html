@@ -5,15 +5,23 @@
 <div class="form">
     <div class="row">
         <div class=" form-group col-lg-6">
-            <form [formGroup]="pincodeform">
-            <input formControlName="pinCode" type="text" class="form-control" name="pinCode" required minlength="6" #box>
-            <div *ngIf="pincodeform.errors?.['required']">
-                Pincode is required.
-              </div>
-              <div *ngIf="pincodeform.errors?.['minlength']">
-                PinCode must be at least 6 digits.
-              </div>
-            </form>
+                <input [formControl]="pincodeControl" type="tel" class="form-control" name="pinCode"
+                    [ngClass]="{'is-invalid': pincodeControl.errors && submitted}"
+                    placeholder="Please enter pin code here" minlength="6" maxlength="6" #box>
+                <div *ngIf="submitted && pincodeControl.errors" class="invalid-feedback">
+                    <div *ngIf="pincodeControl.errors.required">
+                        Pincode is required
+                    </div>
+                    <div *ngIf="pincodeControl.errors.pattern">
+                        Pincode should be numeric
+                    </div>
+                    <div *ngIf="pincodeControl.errors.maxlength">
+                        Pincode should be six digits
+                    </div>
+                    <div *ngIf="pincodeControl.errors.minlength">
+                        Pincode should be six digits
+                    </div>
+                </div>
         </div>
         <div class="col-lg-6">
             <button type="button" (click)="getUserLocationData(box.value)" class="btn btn-light">Apply</button>
