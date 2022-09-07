@@ -14,7 +14,11 @@ export interface menuList{
     data1: string;
     data2: string;
 }
-
-
-
+export interface products{
+    category: string;
+    imgurl: string;
+    title: string;
+    price: number; 
+    qty: number;
+}
 

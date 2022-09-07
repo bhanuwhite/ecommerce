@@ -1,9 +1,8 @@
 <div class="products-container">
-    <h6>Products</h6>
     <div class="sec-section">
         <hr class="product-line">
         <div class="row">
-            <div class="col-lg-3" *ngFor="let product of filterCategory | filter: searchKey:'title'">
+            <div class="col-lg-3" *ngFor="let product of sortedArray ">
                 <mat-card>
                     <mat-card-content class="product-card">
                         <img mat-card-image [src]="product.imgurl">
@@ -13,7 +12,7 @@
                         <p class="price">${{product.price}}</p>
                     </mat-card-content>
                     <mat-card-footer>
-                        <button class="cart-button" type="submit" (click)=addtoCart1(product)>{{'AddCart'|
+                        <button class="cart-button" type="submit">{{'AddCart'|
                             translate}}</button>
                     </mat-card-footer>
                 </mat-card>

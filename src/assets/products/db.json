@@ -1,33 +1,123 @@
-{
-  "posts": [
-    {
+[
+  {
+      "category": "Electronics",
       "imgurl": "assets/images/card1.jpeg",
       "title": "Apple iPhone XS (Gold, 64 GB)",
+      "price": "700.00",
+      "qty": 1
+    },
+    {
+      "category": "Mens",
+      "imgurl": "assets/images/men.1.jpg",
+      "title": "Shirt",
+      "price": "800.00",
+      "qty": 1
+    },
+    {
+      "category": "Womens",
+      "imgurl": "assets/images/wo.1.jpg",
+      "title": "Women Dress",
+      "price": "500.00",
+      "qty": 1
+    },
+    {
+      "category": "Hand Bags",
+      "imgurl": "assets/images/bag1.jpg",
+      "title": "hand bag",
       "price": "600.00",
       "qty": 1
     },
     {
-      "imgurl": "assets/images/card1.jpeg",
-      "title": "Apple iPhone XS (Gold, 64 GB)",
+      "category": "Womens",
+      "imgurl": "assets/images/bag2.jpg",
+      "title": "Bag",
+      "price": "500.00",
+      "qty": 1
+    },
+    {
+      "category": "Womens",
+      "imgurl": "assets/images/bag3.jpg",
+      "title": "bag",
+      "price": "200.00",
+      "qty": 1
+    },
+    {
+      "category": "Mens",
+      "imgurl": "assets/images/men.1.jpg",
+      "title": "Shirts",
+      "price": "1000.00",
+      "qty": 1
+    },
+    
+    {
+      "category": "Mens",
+      "imgurl": "assets/images/men.3.jpg",
+      "title": "Shirt",
       "price": "600.00",
       "qty": 1
     },
     {
-      "imgurl": "assets/images/card1.jpeg",
-      "title": "Apple iPhone XS (Gold, 64 GB)",
+      "category": "Mens",
+      "imgurl": "assets/images/men.2.jpg",
+      "title": "Shirt",
+      "price": "800.00",
+      "qty": 1
+    },
+    
+    {
+      "category": "Mens",
+      "imgurl": "assets/images/men.2.jpg",
+      "title": "Shirt",
+      "price": "900.00",
+      "qty": 1
+    },
+    {
+      "category": "Mens",
+      "imgurl": "assets/images/men.1.jpg",
+      "title": "mens",
+      "price": "400.00",
+      "qty": 1
+    },
+    { 
+      "category": "Womens",
+      "imgurl": "assets/images/wo.3.jpg",
+      "title": "Women Dress",
+      "price": "600.00",
+      "qty": 1
+    },
+    
+    {
+      "category": "Womens",
+      "imgurl": "assets/images/wo.6.jpg",
+      "title": "Dress",
+      "price": "600.00",
+      "qty": 1
+    },
+    
+    {
+      "category": "Womens",
+
+      "imgurl": "assets/images/wo.3.jpg",
+      "title": "Womens",
+      "price": "600.00",
+      "qty": 1
+    },
+    {
+      "category": "Womens",
+
+      "imgurl": "assets/images/wo.2.jpg",
+      "title": "Womens",
+      "price": "600.00",
+      "qty": 1
+    },
+    
+    {
+      "category": "Jewellery",
+
+      "imgurl": "assets/images/je.2.jpg",
+      "title": "jewellery",
       "price": "600.00",
       "qty": 1
     }
     
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
-}
+]

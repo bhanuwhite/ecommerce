@@ -9,6 +9,7 @@ import { TranslateService } from "@ngx-translate/core";
 import { PopUPComponent } from '../pop-up/pop-up.component';
 import { MatDialog } from '@angular/material/dialog';
 import { SharedUserLocationDataService } from 'src/app/services/shared-user-location-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -23,18 +24,18 @@ export class HomePageComponent implements OnInit {
   public subMenu!: menuList[];
   public totalItem: number = 0;
   public isDialogueOpen!: boolean;
-  selectedTeam: any;
-  searchKey: string ="";
   searchTerm: string ="";
+  
 
-  constructor(public api: ProductService,
+  constructor(private route: Router,
+    public api: ProductService,
     public cartservice: CartServiceService,
     public translateService: TranslateService,
     private dialogRef: MatDialog,
     private sharedUserLocationData: SharedUserLocationDataService) {
   }
   ngOnInit(): void {
-    this.translateService.addLangs(['en', 'hn']);
+  this.translateService.addLangs(['en', 'hn']);
     this.translateService.setDefaultLang('en');
     this.translateService.use('en')
     this.api.apiCall().subscribe((data) => {
@@ -84,12 +85,8 @@ export class HomePageComponent implements OnInit {
   public openDialog() {
     this.dialogRef.open(PopUPComponent);
   }
-  public search(event:any){
-    this.searchTerm = (event.target as HTMLInputElement).value;
-    console.log(this.searchTerm);
-    this.cartservice.search.next(this.searchTerm);
-
-    
-  }
+ public sendUserSearchTerm(){
+this.route.navigate(['./products'],{queryParams:{data:this.searchTerm}})
+}
 }
 

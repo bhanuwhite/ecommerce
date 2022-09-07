@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartServiceService } from 'src/app/services/cart-service.service';
 import { ProductService } from 'src/app/services/product.service';
-import { productData } from 'src/app/shared/dataset';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -9,44 +9,40 @@ import { productData } from 'src/app/shared/dataset';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  public items!: productData[];
-  public items1!: productData[];
-  searchKey: string="";
-  public filterCategory: any;
+  productslist!: any;
+  searchKey: string = "";
+  public sortedArray: any = [];
 
-  constructor(public api: ProductService,
+  constructor(private route: ActivatedRoute,
+    public api: ProductService,
     public cartservice: CartServiceService,
-
-  ) { }
+  ) {
+    this.api.products().subscribe((data) => {
+      this.productslist = data;
+      console.log(this.productslist, "productslist");
+      this.sorting();
+    });
+  }
 
   ngOnInit(): void {
-    this.api.apiCall().subscribe((data) => {
-      this.items = data;
-      this.filterCategory = data;
-      console.log(data, 'str')
-      this.items.forEach((a: productData) => {
-        Object.assign(a)
-      });
-    });
-    this.api.apiCall1().subscribe((data) => {
-      this.items1 = data;
-      console.log(data, 'str')
-      this.items.forEach((a: productData) => {
-        Object.assign(a)
-      });
-    });
-    this.cartservice.search.subscribe(val=>{
-      this.searchKey= val;
-    })
-  }
-  public addtoCart1(product: productData) {
-    this.cartservice.addtoCart1(product);
-  }
-  public filter(category:string){
-    this.filterCategory = this.items.filter((a:any)=>{
-      if(a.category ==category || category=='')
-      return a;
-    })
-  }
 
+  }
+  public sorting() {
+    this.route.queryParams.subscribe((params: any) => {
+      this.searchKey = params.data;
+      for (var i in this.productslist) {
+        var key = i;
+        var val = this.productslist[i];
+        for (var j in val) {
+          var sub_key = j;
+          var sub_val = val[j];
+          if (sub_val.toString().toLowerCase().indexOf(this.searchKey) > -1) {
+            this.sortedArray.push(this.productslist[i]);
+            console.log(this.productslist[i], "item");
+            break;
+          }
+        }
+      }
+    })
+  }
 }

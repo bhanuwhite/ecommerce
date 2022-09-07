@@ -31,12 +31,12 @@
             </div>
                 <div class="nav-fill">
                     <div class="nav-search-field">
-                       <input type="text" class="nav-input" name="search" placeholder="Search Products here" [(ngModel)]="searchTerm" (keyup)="search($event)"> 
+                       <input type="text" class="nav-input" name="search" placeholder="Search Products here" [(ngModel)]="searchTerm"> 
                     </div>
                 </div>
                 <div class="nav-right">
                     <div class="nav-search-submit">
-                      <span class="nav-submit-text" routerLink="./products">
+                      <span class="nav-submit-text"  (click)="sendUserSearchTerm()">
                         <i class="fa fa-search fa-lg header-icon" aria-hidden="true"></i>
                       </span>  
                     </div>
@@ -102,16 +102,16 @@
         <div>
             <ul class="nav-sec-item">
                 <li *ngFor="let category of menuitems">
-                    <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                    <a routerLink="./products" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
                         *ngIf="!category.isDropDownMenu">{{category.name.toLowerCase()|translate}}</a>
                     <div class="dropdown" *ngIf="category.isDropDownMenu">
-                        <a class="nav-link  dopDown-toggle" data-toggle="dropDown" aria-haspopup="true"
+                        <a routerLink="./products" class="nav-link  dopDown-toggle" data-toggle="dropDown" aria-haspopup="true"
                             aria-expanded="">{{category.name.toLowerCase()|translate}}</a>
                         <div class="dropDownMenu" aria-labelledby="navBardropDown">
                             <div class="dropdown-content" *ngFor="let menuList of category.subMenu; let i=index">
-                                <a class="dropDown-item" routerLinkActive="active"
+                                <a routerLink="./products" class="dropDown-item" routerLinkActive="active"
                                     [routerLinkActiveOptions]="{ exact: true }">{{menuList.data1|translate}}</a>
-                                <a class="dropDown-item" routerLinkActive="active"
+                                <a  routerLink="./products" class="dropDown-item" routerLinkActive="active"
                                     [routerLinkActiveOptions]="{ exact: true }">{{menuList.data2|translate}}</a>
                             </div>
                         </div>
@@ -249,7 +249,7 @@
                     </div>
                     <div class="row third-sec-right-img2">
                         <img class="right-img" src="assets/images/image3.png">
-                    </div>
+                    </div> 
                 </div>
             </div>
         </div>

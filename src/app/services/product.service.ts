@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { productData } from 'src/app/shared/dataset';
+import { productData, products } from 'src/app/shared/dataset';
 import { categoryData } from 'src/app/shared/dataset';
 
 @Injectable({
@@ -21,6 +21,7 @@ export class ProductService {
   apiCall2(): Observable<categoryData> {
     return this.http.get<categoryData>("assets/data/json/category.json");
   }
-
-  
+  products(): Observable<products>{
+  return this.http.get<products>("assets/products/db.json");
+}
 }
