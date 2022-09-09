@@ -1,0 +1,41 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "users": [
+    {
+      "userName": "shivani",
+      "password": "abcd",
+      "id": 1
+    },
+    {
+      "userName": "Peeter",
+      "password": "abcdbg",
+      "id": 2
+    },
+    {
+      "userName": "Namrata",
+      "password": "abcdbg",
+      "id": 3
+    },
+    {
+      "userName": "",
+      "password": "",
+      "id": 4
+    },
+    {
+      "userName": "",
+      "password": "",
+      "id": 5
+    },
+    {
+      "userName": "",
+      "password": "",
+      "id": 6
+    }
+  ]
+}

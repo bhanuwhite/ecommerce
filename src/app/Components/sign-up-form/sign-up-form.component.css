@@ -1,0 +1,14 @@
+.heading{
+    margin-left:40% ;
+    margin-top: 5%;
+}
+.form{
+    margin-left: 35%;
+    width: 25%;
+    border: none;
+    color: #fff;
+    padding: 40px;
+    position: absolute;
+    background: hsla(205, 46%, 30%, 1);
+    background: linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260,29%,36%,1)100%);
+}

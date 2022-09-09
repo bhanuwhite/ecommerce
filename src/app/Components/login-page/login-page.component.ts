@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { RegisterUserService } from 'src/app/services/register-user.service';
+
 
 @Component({
   selector: 'app-login-page',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor() { }
+  userLogin = new FormGroup({
+    userName: new FormControl('',
+      Validators.required),
+    password: new FormControl('',
+      Validators.required)
+  })
+
+  constructor(private regis: RegisterUserService) { }
 
   ngOnInit(): void {
+  }
+  registerUser() {
+    console.log(this.userLogin.value);
+    this.regis.registerUser(this.userLogin.value).subscribe((res) => {
+      console.log("res", res);
+    })
+
   }
 
 }

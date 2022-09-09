@@ -23,8 +23,7 @@ export class ProductsComponent implements OnInit {
       this.sorting();
     });
   }
-
-  ngOnInit(): void {
+ ngOnInit(): void {
 
   }
   public sorting() {
