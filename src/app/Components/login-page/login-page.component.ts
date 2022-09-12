@@ -1,6 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { RegisterUserService } from 'src/app/services/register-user.service';
+
 
 
 @Component({
@@ -9,22 +10,24 @@ import { RegisterUserService } from 'src/app/services/register-user.service';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
+public userLogin!: FormGroup;
 
-  userLogin = new FormGroup({
-    userName: new FormControl(''),
-    password: new FormControl('')
-  })
 
-  constructor(private regis: RegisterUserService) { }
+  constructor( private formBuilder: FormBuilder, private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.userLogin = this.formBuilder.group({
+      userName: new FormControl('',Validators.required),
+    password: new FormControl('',Validators.required)
+    })
   }
   registerUser() {
-    console.log(this.userLogin.value);
-    this.regis.registerUser(this.userLogin.value).subscribe((res) => {
-      console.log("res", res);
-    })
-
-  }
-
+    // this.http.post<string>("http://localhost:3000/users",this.userLogin.value)
+    // .subscribe(res=>{
+    //   alert("Login Successfully")
+    //   this.userLogin.reset();
+    // })
+    }
 }
+
+

@@ -1,17 +1,17 @@
-<div class="signupform">
+<div class="container-fluid">
   <h3 class="heading">SignUP Form</h3>
   <div class="form">
-    <form [formGroup]="SignUpForm" (ngSubmit)="onSubmit()" class="form-container">
+    <form [formGroup]="signUpForm"  class="form-container">
       <div class="form-group">
         <label for="exampleInputEmail1">First Name</label>
-        <input formControlName="firstName" [ngClass]="{'is-invalid': submitted && SignUpForm.controls.firstName.errors}"
+        <input formControlName="firstName" [ngClass]="{'is-invalid': signUpForm.controls.firstName.errors && signUpForm.controls.firstName.touched }"
           type="text" class="form-control" placeholder="Enter First Name">
-        <div *ngIf="submitted && SignUpForm.controls.firstName.errors" class="text-danger">
-          <div *ngIf="submitted && SignUpForm.controls.firstName.errors.required">
-            First Name is required
+        <div *ngIf=" signUpForm.controls.firstName.errors && signUpForm.controls.firstName.touched" class="text-danger">
+          <div *ngIf="signUpForm.controls.firstName.errors.required">
+            First name is required
           </div>
-          <div *ngIf="submitted && SignUpForm.controls.firstName.errors.pattern">
-            Please Enter valid Name
+          <div *ngIf=" signUpForm.controls.firstName.errors.pattern">
+            Please enter valid name
           </div>
         </div>
       </div>
@@ -21,56 +21,56 @@
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Last Name</label>
-        <input formControlName="lastName" [ngClass]="{'is-invalid': submitted && SignUpForm.controls.lastName.errors}"
+        <input formControlName="lastName" [ngClass]="{'is-invalid': signUpForm.controls.lastName.errors && signUpForm.controls.lastName.touched}"
           type="text" class="form-control" placeholder="Enter Last Name">
-        <div *ngIf="submitted && SignUpForm.controls.lastName.errors" class="text-danger">
-          <div *ngIf="submitted && SignUpForm.controls.lastName.errors.required">
-            Last Name is required
+        <div *ngIf="signUpForm.controls.lastName.errors && signUpForm.controls.lastName.touched" class="text-danger">
+          <div *ngIf=" signUpForm.controls.lastName.errors.required">
+            Last name is required
           </div>
-          <div *ngIf="submitted && SignUpForm.controls.lastName.errors.pattern">
-            Please Enter valid Name
+          <div *ngIf="signUpForm.controls.lastName.errors.pattern">
+            Please enter valid name
           </div>
         </div>
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
-        <input formControlName="email" [ngClass]="{'is-invalid': submitted && SignUpForm.controls.email.errors}"
+        <input formControlName="email" [ngClass]="{'is-invalid':signUpForm.controls.email.errors && signUpForm.controls.email.touched}"
           type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
           placeholder="Enter email">
-        <div *ngIf="submitted && SignUpForm.controls.email.errors" class="text-danger">
-          <div *ngIf="submitted && SignUpForm.controls.email.errors.required">
+        <div *ngIf="signUpForm.controls.email.errors && signUpForm.controls.email.touched" class="text-danger">
+          <div *ngIf="signUpForm.controls.email.errors.required">
             Email is required
           </div>
-          <div *ngIf="submitted && SignUpForm.controls.email.errors.pattern">
+          <div *ngIf=" signUpForm.controls.email.errors.pattern">
             Please provide a valid email address
           </div>
         </div>
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Mobile No</label>
-        <input formControlName="mobileNo" [ngClass]="{'is-invalid': submitted && SignUpForm.controls.mobileNo.errors}"
+        <input formControlName="mobileNo" [ngClass]="{'is-invalid': signUpForm.controls.mobileNo.errors && signUpForm.controls.mobileNo.touched}"
           type="text" class="form-control" placeholder="Enter Mobile No">
-        <div *ngIf="submitted && SignUpForm.controls.mobileNo.errors" class="text-danger">
-          <div *ngIf="submitted && SignUpForm.controls.mobileNo.errors.required">
+        <div *ngIf="signUpForm.controls.mobileNo.errors && signUpForm.controls.mobileNo.touched" class="text-danger">
+          <div *ngIf=" signUpForm.controls.mobileNo.errors.required">
             Mobile No is required
           </div>
-          <div *ngIf="submitted && SignUpForm.controls.mobileNo.errors.minlength">
+          <div *ngIf="signUpForm.controls.mobileNo.errors.minlength">
             Phone number must be atleast 10 digits
           </div>
-          <div *ngIf="submitted && SignUpForm.controls.mobileNo.errors.maxlength">
+          <div *ngIf=" signUpForm.controls.mobileNo.errors.maxlength">
             Phone number must be maximum 10 digits
           </div>
-          <div *ngIf="submitted && SignUpForm.controls.mobileNo.errors.pattern">
+          <div *ngIf=" signUpForm.controls.mobileNo.errors.pattern">
             Please provide a valid number
           </div>
         </div>
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
-        <input formControlName="password" [ngClass]="{'is-invalid': submitted && SignUpForm.controls.password.errors}"
+        <input formControlName="password" [ngClass]="{'is-invalid': signUpForm.controls.password.errors && signUpForm.controls.password.touched}"
           type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        <div *ngIf="submitted && SignUpForm.controls.password.errors" class="text-danger">
-          <div *ngIf="submitted && SignUpForm.controls.password.errors.required">
+        <div *ngIf="signUpForm.controls.password.errors && signUpForm.controls.password.touched" class="text-danger">
+          <div *ngIf="signUpForm.controls.password.errors.required">
             Password is required
           </div>
         </div>
@@ -78,18 +78,18 @@
       <div class="form-group">
         <label for="exampleInputPassword1"> Confirm Password</label>
         <input formControlName="confirmPassword"
-          [ngClass]="{'is-invalid': submitted && SignUpForm.controls.confirmPassword.errors}" type="password"
+          [ngClass]="{'is-invalid': signUpForm.controls.confirmPassword.errors && signUpForm.controls.confirmPassword.touched}" type="password"
           class="form-control" id="exampleInputPassword1" placeholder=" Confirm Password">
-        <div *ngIf="submitted && SignUpForm.controls.confirmPassword.errors" class="text-danger">
-          <div *ngIf="submitted && SignUpForm.controls.confirmPassword.errors.required">
+        <div *ngIf="signUpForm.controls.confirmPassword.errors && signUpForm.controls.confirmPassword.touched" class="text-danger">
+          <div *ngIf="signUpForm.controls.confirmPassword.errors.required">
             Confirm Password is required
           </div>
-          <div *ngIf="submitted && SignUpForm.controls.confirmPassword.errors.MustMatch">
+          <div *ngIf="signUpForm.controls.confirmPassword.errors.MustMatch">
             Confirm your password
           </div>
         </div>
       </div>
-      <button type="submit" [disabled]="!SignUpForm.valid" class="btn btn-primary">Submit</button>
+      <button type="submit" [disabled]="!signUpForm.valid" class="btn btn-primary">Submit</button>
     </form>
   </div>
 </div>

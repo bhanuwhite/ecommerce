@@ -1,14 +1,14 @@
 <h3>Choose your location</h3>
 <p>Select a delivery location to see product availability and delivery options</p>
 <button type="button" class="btn btn-warning">Sign In to see your address</button>
-<p>or enter an Indian Pin Code</p>
+<p class="pin-heading">or enter an Indian Pin Code</p>
 <div class="form">
     <div class="row">
         <div class=" form-group col-lg-6">
                 <input [formControl]="pincodeControl" type="tel" class="form-control" name="pinCode"
-                    [ngClass]="{'is-invalid': pincodeControl.errors && submitted}"
+                    [ngClass]="{'is-invalid': pincodeControl.errors && pincodeControl.touched}"
                     placeholder="Please enter pin code here" minlength="6" maxlength="6" #box>
-                <div *ngIf="submitted && pincodeControl.errors" class="invalid-feedback">
+                <div *ngIf="pincodeControl.errors && pincodeControl.touched" class="invalid-feedback">
                     <div *ngIf="pincodeControl.errors.required">
                         Pincode is required
                     </div>

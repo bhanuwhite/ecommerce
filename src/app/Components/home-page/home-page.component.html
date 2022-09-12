@@ -51,7 +51,7 @@
                     <li>
                         <a (click)="openDialog()">
                             <span>
-                                <p class="loc-text"><i class="fa fa-map-marker" aria-hidden="true"></i>{{'Select Address'|translate}}
+                                <p class="loc-text"><i class="fa fa-map-marker location-icon" aria-hidden="true"></i>{{'Select Address'|translate}}
                                 </p>
                             </span>
                         </a>
@@ -70,10 +70,17 @@
                   <span class="item">|</span>  
                 <li><a href="" class="sell">{{'sell'|translate}}</a><span class="item">|</span></li>
                 <li>
-                    <i class="fa fa-user mr-2" aria-hidden="true"></i>
-                    <a (click)="toggleDialogueModel()">{{'account'|translate}}
-                        <span><i class="fa fa-caret-down" aria-hidden="true"></i></span>
-                    </a><span class="item">
+                    <div class="dropdown">
+                        <button type="button" class="lang" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-user mr-2" aria-hidden="true"></i>
+                            {{'account'|translate}}<i class="fa fa-sort-desc lang-icon eng-dropdown" aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a routerLink="./loginPage" class="dropdown-item" href="#">Sign in</a>
+                          <a routerLink="./signUp"  class="dropdown-item" href="#">Sign up</a>
+                        </div>
+                      </div>
+                  <span class="item">
                         |</span>
                 </li>
                 <ul class="dropdown-list account guest">
@@ -226,7 +233,7 @@
                         <p class="price">${{product.price}}</p>
                     </mat-card-content>
                     <mat-card-footer>
-                        <button class="cart-button" type="submit" (click)=addtoCart2(product)>{{'Addcart'|
+                        <button class="cart-button" type="submit" (click)=addtoCart2(product)>{{'addcart'|
                             translate}}</button>
                     </mat-card-footer>
                 </mat-card>
