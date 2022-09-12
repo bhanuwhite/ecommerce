@@ -5,14 +5,6 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-
-// export function HttpLoaderFactory(http: HttpClient){
-//   return new TranslateHttpLoader(http , [
-//     {prefix:"./assets/data/json/translate", suffix:".json"},
-//     {prefix:"./assets/data/json/translate", suffix:".json"},
-
-//   ]);
-// }
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }

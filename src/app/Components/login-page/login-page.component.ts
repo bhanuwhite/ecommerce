@@ -11,10 +11,8 @@ import { RegisterUserService } from 'src/app/services/register-user.service';
 export class LoginPageComponent implements OnInit {
 
   userLogin = new FormGroup({
-    userName: new FormControl('',
-      Validators.required),
-    password: new FormControl('',
-      Validators.required)
+    userName: new FormControl(''),
+    password: new FormControl('')
   })
 
   constructor(private regis: RegisterUserService) { }

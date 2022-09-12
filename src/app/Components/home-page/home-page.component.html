@@ -14,24 +14,24 @@
                 <div class="nav-left">
                     <div class="nav-search">
                         <span class="nav-search-label">
-                        All <i class="fa fa-caret-down" aria-hidden="true"></i>
+                             <i class="fa fa-caret-down" aria-hidden="true"></i>
                         </span>
                     <select class="nav-search-dropdown">
-                        <option>All</option>
-                        <option>Men</option>
-                        <option>Women</option>
-                        <option>Electronics</option>
-                        <option>Furniture</option>
-                        <option>Books</option> 
-                        <option>Watches</option>
-                        <option>Jewellery</option>
-                        <option>Groceries</option>
+                        <option>{{'All'|translate}}</option>
+                        <option>{{'men'|translate}}</option>
+                        <option>{{'women'|translate}}</option>
+                        <option>{{'electronics'|translate}}</option>
+                        <option>{{'furniture'|translate}}</option>
+                        <option>{{'books'|translate}}</option> 
+                        <option>{{'watches'|translate}}</option>
+                        <option>{{'jewellery'|translate}}</option>
+                        <option>{{'groceries'|translate}}</option>
                     </select> 
                 </div>
             </div>
                 <div class="nav-fill">
                     <div class="nav-search-field">
-                       <input type="text" class="nav-input" name="search" placeholder="Search Products here" [(ngModel)]="searchTerm"> 
+                       <input type="text" class="nav-input" name="search" placeholder="{{'Search Products here'|translate}}" [(ngModel)]="searchTerm"> 
                     </div>
                 </div>
                 <div class="nav-right">
@@ -51,26 +51,23 @@
                     <li>
                         <a (click)="openDialog()">
                             <span>
-                                <p class="loc-text"><i class="fa fa-map-marker" aria-hidden="true"></i> Select Address
+                                <p class="loc-text"><i class="fa fa-map-marker" aria-hidden="true"></i>{{'Select Address'|translate}}
                                 </p>
                             </span>
                         </a>
                     </li>
                 </div>
                 <span class="item">|</span>
-                <div class="dropdown-lang">
-                    <li id="language">
-                            <i class="fa fa-flag lang-icon" aria-hidden="true"></i>EN<span>
-                                <i class="fa fa-sort-desc lang-icon eng-dropdown" aria-hidden="true"></i>
-                            </span>
-                        <div class="dropdown-content">
-                            <a (click)="selectLanguage('en')">English</a>
-                            <a (click)="selectLanguage('hn')">Hindi</a>
-                            <a (click)="selectLanguage('fr')">French</a>
-                        </div>
-                        <span class="item">|</span>
-                    </li>
-                </div>
+                <div class="dropdown">
+                    <button type="button" class="lang" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{'EN'|translate}}<i class="fa fa-sort-desc lang-icon eng-dropdown" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a (click)="selectLanguage('en')" class="dropdown-item" href="#">English</a>
+                      <a (click)="selectLanguage('hn')" class="dropdown-item" href="#">Hindi</a>
+                    </div>
+                  </div>
+                  <span class="item">|</span>  
                 <li><a href="" class="sell">{{'sell'|translate}}</a><span class="item">|</span></li>
                 <li>
                     <i class="fa fa-user mr-2" aria-hidden="true"></i>
