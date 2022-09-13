@@ -11,7 +11,10 @@
                     class="form-control" placeholder="Enter First Name">
                 <div *ngIf="registerUser && userLogin.controls.userName.errors && userLogin.controls.userName.touched" class="text-danger">
                     <div *ngIf="registerUser && userLogin.controls.userName.errors.required">
-                        UserName is required
+                        Username is required
+                    </div>
+                    <div *ngIf="registerUser && userLogin.controls.userName.errors.pattern">
+                        Please provide valid username
                     </div>
                 </div>
             </div>
@@ -27,7 +30,7 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" [disabled]="!userLogin.valid" class="btn btn-primary">Submit</button>
         </form>
     </div>
 </div>

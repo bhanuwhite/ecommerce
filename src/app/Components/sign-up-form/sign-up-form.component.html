@@ -1,14 +1,18 @@
 <div class="container-fluid">
   <h3 class="heading">SignUP Form</h3>
   <div class="form">
-    <form [formGroup]="signUpForm"  class="form-container">
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" class="form-container">
       <div class="form-group">
         <label for="exampleInputEmail1">First Name</label>
-        <input formControlName="firstName" [ngClass]="{'is-invalid': signUpForm.controls.firstName.errors && signUpForm.controls.firstName.touched }"
+        <input formControlName="firstName"
+          [ngClass]="{'is-invalid': signUpForm.controls.firstName.errors && signUpForm.controls.firstName.touched }"
           type="text" class="form-control" placeholder="Enter First Name">
         <div *ngIf=" signUpForm.controls.firstName.errors && signUpForm.controls.firstName.touched" class="text-danger">
           <div *ngIf="signUpForm.controls.firstName.errors.required">
             First name is required
+          </div>
+          <div *ngIf=" signUpForm.controls.firstName.errors.minlength">
+            It shoud be minimum four character.
           </div>
           <div *ngIf=" signUpForm.controls.firstName.errors.pattern">
             Please enter valid name
@@ -18,10 +22,12 @@
       <div class="form-group">
         <label for="exampleInputEmail1">Middle Name</label>
         <input formControlName="middleName" type="text" class="form-control" placeholder="Enter Middle Name">
+
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Last Name</label>
-        <input formControlName="lastName" [ngClass]="{'is-invalid': signUpForm.controls.lastName.errors && signUpForm.controls.lastName.touched}"
+        <input formControlName="lastName"
+          [ngClass]="{'is-invalid': signUpForm.controls.lastName.errors && signUpForm.controls.lastName.touched}"
           type="text" class="form-control" placeholder="Enter Last Name">
         <div *ngIf="signUpForm.controls.lastName.errors && signUpForm.controls.lastName.touched" class="text-danger">
           <div *ngIf=" signUpForm.controls.lastName.errors.required">
@@ -33,10 +39,10 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input formControlName="email" [ngClass]="{'is-invalid':signUpForm.controls.email.errors && signUpForm.controls.email.touched}"
-          type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-          placeholder="Enter email">
+        <label for="exampleInputEmail1">Email Address</label>
+        <input formControlName="email"
+          [ngClass]="{'is-invalid':signUpForm.controls.email.errors && signUpForm.controls.email.touched}" type="email"
+          class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
         <div *ngIf="signUpForm.controls.email.errors && signUpForm.controls.email.touched" class="text-danger">
           <div *ngIf="signUpForm.controls.email.errors.required">
             Email is required
@@ -48,7 +54,8 @@
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Mobile No</label>
-        <input formControlName="mobileNo" [ngClass]="{'is-invalid': signUpForm.controls.mobileNo.errors && signUpForm.controls.mobileNo.touched}"
+        <input formControlName="mobileNo"
+          [ngClass]="{'is-invalid': signUpForm.controls.mobileNo.errors && signUpForm.controls.mobileNo.touched}"
           type="text" class="form-control" placeholder="Enter Mobile No">
         <div *ngIf="signUpForm.controls.mobileNo.errors && signUpForm.controls.mobileNo.touched" class="text-danger">
           <div *ngIf=" signUpForm.controls.mobileNo.errors.required">
@@ -67,7 +74,8 @@
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
-        <input formControlName="password" [ngClass]="{'is-invalid': signUpForm.controls.password.errors && signUpForm.controls.password.touched}"
+        <input formControlName="password"
+          [ngClass]="{'is-invalid': signUpForm.controls.password.errors && signUpForm.controls.password.touched}"
           type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
         <div *ngIf="signUpForm.controls.password.errors && signUpForm.controls.password.touched" class="text-danger">
           <div *ngIf="signUpForm.controls.password.errors.required">
@@ -78,14 +86,15 @@
       <div class="form-group">
         <label for="exampleInputPassword1"> Confirm Password</label>
         <input formControlName="confirmPassword"
-          [ngClass]="{'is-invalid': signUpForm.controls.confirmPassword.errors && signUpForm.controls.confirmPassword.touched}" type="password"
-          class="form-control" id="exampleInputPassword1" placeholder=" Confirm Password">
-        <div *ngIf="signUpForm.controls.confirmPassword.errors && signUpForm.controls.confirmPassword.touched" class="text-danger">
+          [ngClass]="{'is-invalid': signUpForm.controls.confirmPassword.errors && signUpForm.controls.confirmPassword.touched}"
+          type="password" class="form-control" id="exampleInputPassword1" placeholder=" Confirm Password">
+        <div *ngIf="signUpForm.controls.confirmPassword.errors && signUpForm.controls.confirmPassword.touched"
+          class="text-danger">
           <div *ngIf="signUpForm.controls.confirmPassword.errors.required">
             Confirm Password is required
           </div>
-          <div *ngIf="signUpForm.controls.confirmPassword.errors.MustMatch">
-            Confirm your password
+          <div *ngIf="signUpForm.controls.confirmPassword.errors.ConfirmValidator">
+            Passsword and Confirm Password didn't match
           </div>
         </div>
       </div>

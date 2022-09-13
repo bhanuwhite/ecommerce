@@ -5,7 +5,6 @@
 
 .header-img {
     width: 60px;
-    margin-left: 20px;
     margin-right: 30px;
 
 }
@@ -137,6 +136,7 @@ input[type=text] {
     width: auto;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 0;
 
 }
 .loc-text{
@@ -204,6 +204,7 @@ input[type=text] {
 .nav-search-submit{
     position: relative;
     top: 5px;
+    left: -3px;
     right: 0;
     height: 40px;
     cursor: pointer;
@@ -238,10 +239,36 @@ input[type=text] {
     box-shadow: none;
     text-indent: 8px
 }
+.nav-left{
+    width: 95px;
+}
 .account-sec {
     font-size: 18px;
     color: #242424;
 }
+.acc-heading{
+    color: #a5a5a5;
+}
+.acc-button{
+    background-color: rgb(62, 62, 131);
+    color: #fff;
+    width: 85px;
+    height: 40px;
+    border: none;
+}
+
+.account-menu{
+    left: -140px !important;
+    padding: 20px !important;
+    width: 300px !important;
+}
+.signup-button{
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
 
 .account-sec span {
     margin: 0 10px;
@@ -275,8 +302,8 @@ input[type=text] {
 .categories-sec li {
     list-style-type: none;
     float: left;
-    margin-right: 10px;
-    height: 45px;
+    margin-right: 20px;
+    height: 50px;
 
 }
 

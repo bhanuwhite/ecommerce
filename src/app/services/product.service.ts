@@ -22,6 +22,6 @@ export class ProductService {
     return this.http.get<categoryData>("assets/data/json/category.json");
   }
   products(): Observable<products>{
-  return this.http.get<products>("assets/products/db.json");
+  return this.http.get<products>("assets/products/pro.json");
 }
 }

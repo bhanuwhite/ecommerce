@@ -75,9 +75,16 @@
                             <i class="fa fa-user mr-2" aria-hidden="true"></i>
                             {{'account'|translate}}<i class="fa fa-sort-desc lang-icon eng-dropdown" aria-hidden="true"></i>
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a routerLink="./loginPage" class="dropdown-item" href="#">Sign in</a>
-                          <a routerLink="./signUp"  class="dropdown-item" href="#">Sign up</a>
+                        <div class="dropdown-menu account-menu" aria-labelledby="dropdownMenuButton">
+                            <div class="account-section">
+                            <h5 class="acc-heading">Account</h5>
+                            <p>Manage Cart,Orders & Wishlist</p>
+                            <div class="signup-button">
+                            <button routerLink="./loginPage" class="acc-button">Sign In</button>
+                            <button  routerLink="./signUp" class="acc-button">Sign Up</button>
+                            </div>
+                            
+                            </div>
                         </div>
                       </div>
                   <span class="item">
