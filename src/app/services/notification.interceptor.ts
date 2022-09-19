@@ -6,29 +6,35 @@ import {
   HttpInterceptor,
   HttpErrorResponse
 } from '@angular/common/http';
-import { catchError, Observable, retry, throwError } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 
 @Injectable()
 export class NotificationInterceptor implements HttpInterceptor {
 
   constructor() {}
 
-  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+  intercept(request: HttpRequest<unknown>, next: HttpHandler){
+    console.log('Http Request Started');
     return next.handle(request)
-    .pipe(
-      retry(1),
-      catchError((error: HttpErrorResponse) => {
-        let errorMessage = '';
-        if (error.error instanceof ErrorEvent) {
-          // client-side error
-          errorMessage = `Error: ${error.error.message}`;
-        } else {
-          // server-side error
-          errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-        }
-        window.alert(errorMessage);
-        return throwError(errorMessage);
-      })
-    )
+                  .pipe(
+                    catchError((error: HttpErrorResponse)=>{
+                      const errorMessage= this.setError(error)
+                    console.log(errorMessage)
+                    alert(errorMessage)
+                    return throwError(errorMessage)
+                  })
+                  )
+    
+  }
+  setError(error: HttpErrorResponse): String{
+    let errorMessage = 'Unknown error Occured';
+    if(error.error instanceof ErrorEvent){
+      errorMessage = error.error.message;
+    }else{
+      if(error.status!==0){
+      errorMessage = error.error;
+    }
+    }
+    return errorMessage;
   }
 }
