@@ -12,13 +12,13 @@ export class ProductService {
   constructor(private http: HttpClient) { }
   
 
-  apiCall(): Observable<productData[]> {
+  products1(): Observable<productData[]> {
     return this.http.get<productData[]>("assets/data/json/featuredProduct.json");
   }
-  apiCall1(): Observable<productData[]> {
+  products2(): Observable<productData[]> {
     return this.http.get<productData[]>("assets/data/json/NewProduct.json");
   }
-  apiCall2(): Observable<categoryData> {
+  menu(): Observable<categoryData> {
     return this.http.get<categoryData>("assets/data/json/category.json");
   }
   products(): Observable<products>{

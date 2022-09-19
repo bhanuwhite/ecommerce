@@ -24,7 +24,6 @@ export class PopUPComponent implements OnInit {
 
   }
   public getUserLocationData(pincode: string) {
-    this.submitted= true;
     if(this.pincodeControl.invalid){
       return
     }

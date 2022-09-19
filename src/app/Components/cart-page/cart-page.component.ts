@@ -19,25 +19,25 @@ export class CartPageComponent implements OnInit {
   constructor(public api: ProductService, public cartservice: CartServiceService) { }
 
   ngOnInit(): void {
-    this.api.apiCall().subscribe((data) => {
+    this.api.products2().subscribe((data) => {
       this.items = data;
       console.log(data, 'str')
       this.items.forEach((a: productData) => {
         Object.assign(a)
       });
     });
-    this.api.apiCall1().subscribe((data) => {
+    this.api.products2().subscribe((data) => {
       this.items1 = data;
       console.log(data, 'str')
       this.items.forEach((a: productData) => {
         Object.assign(a)
       });
     });
-    this.api.apiCall2().subscribe((data: categoryData) => {
+    this.api.menu().subscribe((data: categoryData) => {
       this.menuitems = data.subMenu;
       console.log(data, 'str, boolean')
     });
-    this.api.apiCall2().subscribe((data: categoryData) => {
+    this.api.menu().subscribe((data: categoryData) => {
       this.subMenu = data.subMenu;
       console.log(data, 'str')
     });
@@ -71,6 +71,9 @@ export class CartPageComponent implements OnInit {
     if (item.qty > 1) {
       item.qty -= 1;
     }
+  }
+  showToastSuccess(){
+
   }
 }
 

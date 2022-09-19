@@ -10,6 +10,9 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TranslateModule,
     MatDialogModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    
     
 ]
 })

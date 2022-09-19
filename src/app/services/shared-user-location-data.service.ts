@@ -10,7 +10,7 @@ export class SharedUserLocationDataService {
   userLocation$ = this.userLoctionData.asObservable();
 
   constructor() { }
-sendLocation(location: any){
-    this.userLoctionData.next(location);
+ sendLocation(location: any){
+    this.userLoctionData.next(location); 
   }
 }
