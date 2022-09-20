@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CartPageRoutingModule } from './cart-page-routing.module';
 import { CartPageComponent } from './cart-page.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -13,7 +13,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     CommonModule,
     CartPageRoutingModule,
-    BrowserAnimationsModule
   ]
 })
 export class CartPageModule { }

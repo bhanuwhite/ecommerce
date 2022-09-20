@@ -1,9 +1,9 @@
 {
-    "All": "All", 
-    "Search Products here":"Search Products here",
+    "all": "All", 
+    "search_products_here":"Search Products here",
     "select_address": "Select Address",
-    "EN":"EN",
-    "HN":"HN",
+    "en":"EN",
+    "hn":"HN",
     "sell": "Sell",
     "account": "Account",
     "cart": "Cart",

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import {
   HttpRequest,
   HttpHandler,
@@ -11,30 +12,33 @@ import { catchError, Observable, throwError } from 'rxjs';
 @Injectable()
 export class NotificationInterceptor implements HttpInterceptor {
 
-  constructor() {}
+  constructor(private snackBar: MatSnackBar) { }
 
-  intercept(request: HttpRequest<unknown>, next: HttpHandler){
+  intercept(request: HttpRequest<unknown>, next: HttpHandler) {
     console.log('Http Request Started');
     return next.handle(request)
-                  .pipe(
-                    catchError((error: HttpErrorResponse)=>{
-                      const errorMessage= this.setError(error)
-                    console.log(errorMessage)
-                    alert(errorMessage)
-                    return throwError(errorMessage)
-                  })
-                  )
-    
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          let errorMessage = "";
+          if (error.status === 400) {
+            this.snackBar.open("Bad Request")
+          }
+          else if (error.status ===0) {
+            this.snackBar.open("Network Error")
+          }
+          else if (error.status === 404) {
+            this.snackBar.open("Page Not Found")
+          }
+          else if (error.status === 500) {
+            this.snackBar.open("Server Error")
+          }
+          else {
+            ("Unknown Error Occured")
+          }
+          return throwError(errorMessage);
+        })
+      )
+
   }
-  setError(error: HttpErrorResponse): String{
-    let errorMessage = 'Unknown error Occured';
-    if(error.error instanceof ErrorEvent){
-      errorMessage = error.error.message;
-    }else{
-      if(error.status!==0){
-      errorMessage = error.error;
-    }
-    }
-    return errorMessage;
-  }
+
 }

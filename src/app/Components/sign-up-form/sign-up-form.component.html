@@ -87,7 +87,7 @@
         <label for="exampleInputPassword1"> Confirm Password</label>
         <input formControlName="confirmPassword"
           [ngClass]="{'is-invalid': signUpForm.controls.confirmPassword.errors && signUpForm.controls.confirmPassword.touched}"
-          type="password" class="form-control" id="exampleInputPassword1" placeholder=" Confirm Password">
+          type="password" class="form-control" id="exampleInputPassword2" placeholder=" Confirm Password">
         <div *ngIf="signUpForm.controls.confirmPassword.errors && signUpForm.controls.confirmPassword.touched"
           class="text-danger">
           <div *ngIf="signUpForm.controls.confirmPassword.errors.required">

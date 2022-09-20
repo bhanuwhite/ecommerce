@@ -18,6 +18,11 @@ export class SignUpFormComponent implements OnInit {
         Validators.minLength(4),
         Validators.pattern("[a-zA-Z]{1,}")
         ]],
+        middleName: ['',
+        [
+        Validators.minLength(4),
+        Validators.pattern("[a-zA-Z]{1,}")
+        ]],
       lastName: ['',
         [Validators.required,
         Validators.pattern("[a-zA-Z]{1,}")]

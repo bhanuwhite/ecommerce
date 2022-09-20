@@ -1,0 +1,9 @@
+.form {
+    border: none;
+    color: black;
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 30%;
+    left: 35%;
+}

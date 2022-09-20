@@ -44,6 +44,7 @@ export class HomePageComponent implements OnInit{
   this.translateService.addLangs(['en', 'hn']);
     this.translateService.setDefaultLang('en');
     this.translateService.use('en')
+
     this.api.products1().subscribe((data) => {
       this.items = data;
       console.log(data, 'str')
@@ -74,6 +75,7 @@ export class HomePageComponent implements OnInit{
 
     this.sharedUserLocationData.userLocation$
       .subscribe((userLocation) => {
+        console.log(userLocation);
         console.log(userLocation[0].PostOffice[1].Circle);
           this.userLocationData= userLocation[0].PostOffice[1].Circle;
   });
