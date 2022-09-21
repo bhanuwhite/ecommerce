@@ -72,9 +72,6 @@ export class CartPageComponent implements OnInit {
       item.qty -= 1;
     }
   }
-  showToastSuccess(){
-
-  }
 }
 
 

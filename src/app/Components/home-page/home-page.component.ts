@@ -37,7 +37,7 @@ export class HomePageComponent implements OnInit{
     public translateService: TranslateService,
     private dialogRef: MatDialog,
     private sharedUserLocationData: SharedUserLocationDataService,
-    private currentLocation: CurrentLocationService) {
+    ) {
   }
  
   ngOnInit(): void {    
@@ -71,17 +71,13 @@ export class HomePageComponent implements OnInit{
   }
 
   public getUserLocationData() {
-
-
-    this.sharedUserLocationData.userLocation$
+      this.sharedUserLocationData.userLocation$
       .subscribe((userLocation) => {
-        console.log(userLocation);
-        console.log(userLocation[0].PostOffice[1].Circle);
           this.userLocationData= userLocation[0].PostOffice[1].Circle;
   });
   }
   public selectLanguage(lang: string) {
-    this.translateService.use(lang)
+    this.translateService.use(lang) 
     console.log(lang);
   }
  

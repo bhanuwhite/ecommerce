@@ -1,47 +1,64 @@
 <div class="container-fluid">
     <div class="form">
-        <form>
+        <form [formGroup]="addressForm" (ngSubmit)="addAddress()">
             <div class="form-group">
                 <label for="exampleInputEmail1">Address Line1</label>
-                <input  type="text" class="form-control">
+                <input type="text" formControlName="addressLine1" class="form-control">
+                <div *ngIf="addressForm.controls.addressLine1.errors && addressForm.controls.addressLine1.touched"
+                class="text-danger">
+            <div *ngIf="addressForm.controls.addressLine1.errors.required">
+              Address1 is required
+            </div>
+          </div>
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Address Line2</label>
-                <input type="text" class="form-control" id="exampleInput">
+                <input type="text" formControlName="addressLine2"
+                 class="form-control" id="exampleInput">
+                 <div *ngIf="addressForm.controls.addressLine2.errors && addressForm.controls.addressLine2.touched"
+                    class="text-danger">
+                <div *ngIf="addressForm.controls.addressLine2.errors.required">
+                  Address2 is required
+                </div>
+              </div>
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Pincode</label>
-                <input type="text" class="form-control" id="exampleInput">
-            </div>
+                <input  type="text" formControlName="pincode"
+                  class="form-control" id="exampleInput">
+                  <div *ngIf="addressForm.controls.pincode.errors && addressForm.controls.pincode.touched"
+                    class="text-danger">
+                <div *ngIf="addressForm.controls.pincode.errors.required">
+                  Pincode is required
+                </div>
+              </div>
+                </div>
             <div class="form-group"> 
                 <label for="exampleInputPassword1">City</label>
-                <select>
-                    <option value="">City</option>
-                    <option>Lucknow</option>
-                    <option>Chennai </option>
-                    <option>Bangalore </option>
-                    <option>Kolkata </option>
-                    <option>Hyderabad </option>
-                    <option>Mumbai </option>
-                </select>
+                <input type="text" formControlName="city" [value]="userCity"
+                class="form-control" id="exampleInput">
+                <div *ngIf="addressForm.controls.city.errors && addressForm.controls.city.touched"
+                    class="text-danger">
+                <div *ngIf="addressForm.controls.city.errors.required">
+                  City is required
+                </div>
+              </div>
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">State</label>
-                <select>
-                    <option value="">State</option>
-                    <option>UP</option>
-                    <option>Rajasthan</option>
-                    <option>Assam</option>
-                    <option>Chhattisgarh</option>
-                    <option>Goa</option>
-                    <option>Gujarat</option>
-                </select>
+                <input type="text" formControlName="state" [value]="userState"  class="form-control" id="exampleInput">
+                <div *ngIf="addressForm.controls.state.errors && addressForm.controls.state.touched"
+                    class="text-danger">
+                <div *ngIf="addressForm.controls.state.errors.required">
+                  State is required
+                </div>
+              </div>
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Landmark</label>
-                <input type="text" class="form-control" id="exampleInput">
+                <input type="text"  class="form-control" id="exampleInput">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" [disabled]="!addressForm.valid" class="btn btn-primary">Submit</button>
         </form>
     </div>
 </div>

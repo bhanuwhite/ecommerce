@@ -47,6 +47,5 @@ export class SignUpFormComponent implements OnInit {
   }
   public onSubmit() {
     console.log(this.signUpForm);
-
   }
 }

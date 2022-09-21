@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AddAddressPageRoutingModule } from './add-address-page-routing.module';
 import { AddAddressPageComponent } from './add-address-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     AddAddressPageRoutingModule,
     ReactiveFormsModule,
+    MatSelectModule
     
   ]
 })

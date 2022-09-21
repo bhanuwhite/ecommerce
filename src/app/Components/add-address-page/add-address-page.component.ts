@@ -10,24 +10,35 @@ import { SharedUserLocationDataService } from 'src/app/services/shared-user-loca
 })
 export class AddAddressPageComponent implements OnInit {
   public addressForm!: FormGroup;
-  userLocationData: any;
+  userCity!: string;
+  userState!: string;
   
+  constructor(private formBuilder: FormBuilder,private sharedUserLocationData: SharedUserLocationDataService) { 
+    this.getUserLocationData();
 
-  constructor(private sharedUserLocationData: SharedUserLocationDataService) { }
+  }
 
   ngOnInit(): void {
-    this.getUserLocationData();
-  }
-  
+    this.addressForm = this.formBuilder.group({
+      addressLine1: new FormControl('', Validators.required),
+      addressLine2: new FormControl('', Validators.required),
+      pincode: new FormControl('', [Validators.required, Validators.minLength(4)]),
+      city : new FormControl('', Validators.required),
+      state: new FormControl('', Validators.required),
+      
+    })
+}
   public getUserLocationData() {
    this.sharedUserLocationData.userLocation$
       .subscribe((userLocation) => {
-        console.log(this.userLocationData);
-        console.log(userLocation[0].PostOffice[1].Block);
-        console.log(userLocation[0].PostOffice[1].Circle);
-          this.userLocationData= userLocation[0].PostOffice[1].Circle;
-          this.userLocationData= userLocation[0].PostOffice[1].Block;
-  });
+          this.userState= userLocation[0].PostOffice[1].Circle;
+          this.userCity= userLocation[0].PostOffice[1].Block;
+          console.log(this.userState);
+          console.log(this.userState);
+        });
+  }
+  public addAddress(){
+    console.log(this.addressForm);
   }
 
 }
