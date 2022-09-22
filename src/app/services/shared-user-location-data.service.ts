@@ -12,5 +12,6 @@ export class SharedUserLocationDataService {
   constructor() { }
  sendLocation(location: any){
     this.userLoctionData.next(location); 
+    localStorage.setItem('Data', JSON.stringify(location));
   }
 }

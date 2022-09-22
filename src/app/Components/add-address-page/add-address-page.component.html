@@ -46,7 +46,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">State</label>
-                <input type="text" formControlName="state" [value]="userState"  class="form-control" id="exampleInput">
+                <input type="text" formControlName="state"  class="form-control" id="exampleInput">
                 <div *ngIf="addressForm.controls.state.errors && addressForm.controls.state.touched"
                     class="text-danger">
                 <div *ngIf="addressForm.controls.state.errors.required">
