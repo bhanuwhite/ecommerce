@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentLocationService } from 'src/app/services/current-location.service';
 import { SharedUserLocationDataService } from 'src/app/services/shared-user-location-data.service';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {  FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-pop-up',
@@ -16,6 +16,7 @@ export class PopUPComponent implements OnInit {
   Validators.minLength(6),
  Validators.pattern(/^[0-9_]+$/)]);
   submitted: boolean= false;
+  modal: any;
   constructor(
     public currentLocationService: CurrentLocationService,
     private sharedUserLocationData: SharedUserLocationDataService) {
@@ -31,6 +32,10 @@ export class PopUPComponent implements OnInit {
       this.data = data;
       this.sharedUserLocationData.sendLocation(data);
     })
+    close();
+  }
+  public close(){
+  
   }
 }
 

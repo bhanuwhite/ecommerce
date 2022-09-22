@@ -23,6 +23,8 @@ export class CartServiceService {
   addtoCart1(product: productData) {
     this.cartItemList.push(product);
     this.items.next(this.cartItemList);
+    console.log(this.cartItemList);
+    
   }
   getProducts2() {
     return this.items1.asObservable();

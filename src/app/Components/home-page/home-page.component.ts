@@ -23,13 +23,13 @@ export class HomePageComponent implements OnInit{
   public items1!: productData[];
   public menuitems!: categoryData[];
   public subMenu!: menuList[];
-  public totalItem: number = 0;
+  public totalItem: number=0;
   public isDialogueOpen!: boolean;
   searchTerm: string ="";
   loading!: boolean;
   error!: string;
   selectAddress:any;
-  ShowLocation:any
+  ShowLocation:any;
 
   constructor(private route: Router,
     public api: ProductService,
@@ -47,10 +47,9 @@ export class HomePageComponent implements OnInit{
 
     this.api.products1().subscribe((data) => {
       this.items = data;
-      console.log(data, 'str')
       this.items.forEach((a: productData) => {
         Object.assign(a)
-      });
+ });
     });
     this.api.products2().subscribe((data) => {
       this.items1 = data;
@@ -74,7 +73,7 @@ export class HomePageComponent implements OnInit{
       this.sharedUserLocationData.userLocation$
       .subscribe((userLocation) => {
           this.userLocationData= userLocation[0].PostOffice[1].Circle;
-  });
+      });
   }
   public selectLanguage(lang: string) {
     this.translateService.use(lang) 
@@ -83,9 +82,11 @@ export class HomePageComponent implements OnInit{
  
   public addtoCart1(product: productData) {
     this.cartservice.addtoCart1(product);
+    this.totalItem+=1;
   }
   public addtoCart2(product: productData) {
     this.cartservice.addtoCart2(product);
+    this.totalItem+=1;
   }
   public openDialog() {
     this.dialogRef.open(PopUPComponent);

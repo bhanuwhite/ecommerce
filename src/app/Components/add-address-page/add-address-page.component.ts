@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { CurrentLocationService } from 'src/app/services/current-location.service';
 
 @Component({
   selector: 'app-add-address-page',
@@ -12,16 +13,20 @@ export class AddAddressPageComponent implements OnInit {
   userState!: string;
   userLocation: any;
   userLocationData: any;
+  pincode: any;
+  data: any;
 
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private currentLocationService: CurrentLocationService ) {
 
     this.userLocation = localStorage.getItem("Data")
     this.userLocationData = JSON.parse(this.userLocation)
-    this.userCity = this.userLocationData[0].PostOffice[1].Block;
-    this.userState = this.userLocationData[0].PostOffice[1].Circle;
-    console.log(this.userLocationData[0].PostOffice[1].Circle);
-    console.log(this.userLocationData[0].PostOffice[1].Block);
+    console.log(this.userLocationData);
+    
+    this.userCity = this.userLocationData[0].PostOffice[1].District;
+    this.userState = this.userLocationData[0].PostOffice[1].State;
+    console.log(this.userLocationData[0].PostOffice[1].State);
+    console.log(this.userLocationData[0].PostOffice[1].District);
   }
 
   ngOnInit(): void {
@@ -36,5 +41,15 @@ export class AddAddressPageComponent implements OnInit {
   }
   public addAddress() {
     console.log(this.addressForm);
+  }
+  public sendPinCode(pincode:any){
+    if(this.pincode.invalid){
+      return
+    }
+    this.currentLocationService.getUserLocationData(pincode).subscribe(data => {
+      this.data = data;
+      console.log(data);
+      
+    })
   }
 }

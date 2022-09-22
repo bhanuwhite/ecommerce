@@ -25,7 +25,7 @@
             <div class="form-group">
                 <label for="exampleInputPassword1">Pincode</label>
                 <input  type="text" formControlName="pincode"
-                  class="form-control" id="exampleInput">
+                  class="form-control" id="exampleInput" #code onkeyup="sendPinCode(code.value)">
                   <div *ngIf="addressForm.controls.pincode.errors && addressForm.controls.pincode.touched"
                     class="text-danger">
                 <div *ngIf="addressForm.controls.pincode.errors.required">
