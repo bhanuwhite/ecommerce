@@ -15,18 +15,24 @@ export class AddAddressPageComponent implements OnInit {
   userLocationData: any;
   pincode: any;
   data: any;
+  City: any;
+  State: any;
+  code: any;
+  Code: any;
 
 
   constructor(private formBuilder: FormBuilder, private currentLocationService: CurrentLocationService ) {
 
     this.userLocation = localStorage.getItem("Data")
     this.userLocationData = JSON.parse(this.userLocation)
-    console.log(this.userLocationData);
+    // console.log(this.userLocationData);
     
     this.userCity = this.userLocationData[0].PostOffice[1].District;
     this.userState = this.userLocationData[0].PostOffice[1].State;
-    console.log(this.userLocationData[0].PostOffice[1].State);
-    console.log(this.userLocationData[0].PostOffice[1].District);
+    this.Code= this.data[0].PostOffice[1].Pincode;
+
+    // console.log(this.userLocationData[0].PostOffice[1].State);
+    // console.log(this.userLocationData[0].PostOffice[1].District);
   }
 
   ngOnInit(): void {
@@ -42,14 +48,14 @@ export class AddAddressPageComponent implements OnInit {
   public addAddress() {
     console.log(this.addressForm);
   }
-  public sendPinCode(pincode:any){
-    if(this.pincode.invalid){
-      return
-    }
-    this.currentLocationService.getUserLocationData(pincode).subscribe(data => {
-      this.data = data;
-      console.log(data);
-      
-    })
-  }
+  public sendPinCode(pin: any){
+  this.currentLocationService.userLocation(pin).subscribe(data => {
+    this.data = data;
+    console.log(this.data, "address");
+    this.City = this.data[0].PostOffice[1].District;
+    this.State = this.data[0].PostOffice[1].State;
+    console.log(this.data[0].PostOffice[1].State);
+    
+  })
+}   
 }

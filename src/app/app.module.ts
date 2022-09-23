@@ -10,12 +10,14 @@ import { PopUPComponent } from './Components/pop-up/pop-up.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NotificationInterceptor } from './services/notification.interceptor';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AddAddressPageComponent } from './Components/add-address-page/add-address-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PopUPComponent,
+    AddAddressPageComponent,
   ],
   imports: [
     BrowserModule,

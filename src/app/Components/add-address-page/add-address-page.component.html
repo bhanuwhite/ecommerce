@@ -25,7 +25,7 @@
             <div class="form-group">
                 <label for="exampleInputPassword1">Pincode</label>
                 <input  type="text" formControlName="pincode"
-                  class="form-control" id="exampleInput" #code onkeyup="sendPinCode(code.value)">
+                  class="form-control" id="exampleInput" #code (keyup)="sendPinCode(code.value)">
                   <div *ngIf="addressForm.controls.pincode.errors && addressForm.controls.pincode.touched"
                     class="text-danger">
                 <div *ngIf="addressForm.controls.pincode.errors.required">
@@ -35,7 +35,7 @@
                 </div>
             <div class="form-group"> 
                 <label for="exampleInputPassword1">City</label>
-                <input type="text" formControlName="city" [value]="userCity"
+                <input type="text" formControlName="city"  [value]="City"
                 class="form-control" id="exampleInput">
                 <div *ngIf="addressForm.controls.city.errors && addressForm.controls.city.touched"
                     class="text-danger">
@@ -46,7 +46,7 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">State</label>
-                <input type="text" formControlName="state"  class="form-control" id="exampleInput">
+                <input type="text" formControlName="state" [value]="State" class="form-control" id="exampleInput">
                 <div *ngIf="addressForm.controls.state.errors && addressForm.controls.state.touched"
                     class="text-danger">
                 <div *ngIf="addressForm.controls.state.errors.required">

@@ -11,4 +11,8 @@ export class CurrentLocationService {
   const url="https://api.postalpincode.in/pincode/"+pincode;
     return this.http.get(url);
   }
+  userLocation(pin: string){
+    const url="https://api.postalpincode.in/pincode/"+pin;
+    return this.http.get(url);
+  }
 }

@@ -1,5 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, ElementRef, Inject, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { productData } from 'src/app/shared/dataset';
 import { ProductService } from 'src/app/services/product.service';
 import { categoryData } from 'src/app/shared/dataset';
@@ -10,7 +9,7 @@ import { PopUPComponent } from '../pop-up/pop-up.component';
 import { MatDialog } from '@angular/material/dialog';
 import { SharedUserLocationDataService } from 'src/app/services/shared-user-location-data.service';
 import { Router } from '@angular/router';
-import { CurrentLocationService } from 'src/app/services/current-location.service';
+
 
 @Component({
   selector: 'app-home-page',
@@ -72,7 +71,7 @@ export class HomePageComponent implements OnInit{
   public getUserLocationData() {
       this.sharedUserLocationData.userLocation$
       .subscribe((userLocation) => {
-          this.userLocationData= userLocation[0].PostOffice[1].Circle;
+          this.userLocationData= userLocation[0].PostOffice[1].State;
       });
   }
   public selectLanguage(lang: string) {
