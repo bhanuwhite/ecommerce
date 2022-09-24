@@ -17,8 +17,7 @@ export class AddAddressPageComponent implements OnInit {
   data: any;
   City: any;
   State: any;
-  code: any;
-  Code: any;
+  
 
 
   constructor(private formBuilder: FormBuilder, private currentLocationService: CurrentLocationService ) {
@@ -29,7 +28,7 @@ export class AddAddressPageComponent implements OnInit {
     
     this.userCity = this.userLocationData[0].PostOffice[1].District;
     this.userState = this.userLocationData[0].PostOffice[1].State;
-    this.Code= this.data[0].PostOffice[1].Pincode;
+    
 
     // console.log(this.userLocationData[0].PostOffice[1].State);
     // console.log(this.userLocationData[0].PostOffice[1].District);
@@ -55,7 +54,6 @@ export class AddAddressPageComponent implements OnInit {
     this.City = this.data[0].PostOffice[1].District;
     this.State = this.data[0].PostOffice[1].State;
     console.log(this.data[0].PostOffice[1].State);
-    
-  })
+   })
 }   
 }
