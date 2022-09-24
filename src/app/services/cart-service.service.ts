@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { productData } from '../shared/dataset';
-import { forkJoin, of } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartServiceService {
-
   public cartItemList: productData[] = [];
   public items = new BehaviorSubject<productData[]>([]);
   public items1 = new BehaviorSubject<productData[]>([]);
-  
+
   constructor() { }
   getProducts1() {
     return this.items.asObservable();
@@ -24,7 +23,6 @@ export class CartServiceService {
     this.cartItemList.push(product);
     this.items.next(this.cartItemList);
     console.log(this.cartItemList);
-    
   }
   getProducts2() {
     return this.items1.asObservable();

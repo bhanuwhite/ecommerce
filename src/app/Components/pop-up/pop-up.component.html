@@ -2,37 +2,36 @@
     <h3>Choose your location</h3>
     <hr>
     <p>Select a delivery location to see product availability and delivery options</p>
-    <button type="button" class="btn btn-warning signin-button"
-     routerLink="address-page" (click)="close()">Sign In to see your address</button>
+    <button type="button" class="btn btn-warning signin-button" routerLink="address-page" (click)="close()">Sign In to
+        see your address</button>
     <p class="pin-heading">
-     or enter an Indian Pin Code
+        or enter an Indian Pin Code
     </p>
     <div class="form">
         <div class="row">
             <div class=" form-group col-lg-6">
-                    <input [formControl]="pincodeControl" type="tel" class="form-control" name="pinCode"
-                     [ngClass]="{'is-invalid': pincodeControl.errors && pincodeControl.touched}"   
+                <input [formControl]="pincodeControl" type="tel" class="form-control" name="pinCode"
+                    [ngClass]="{'is-invalid': pincodeControl.errors && pincodeControl.touched}"
                     placeholder="Please enter pin code here" #box>
-                    <div *ngIf="pincodeControl.errors && pincodeControl.touched" class="invalid-feedback">
-                        <div *ngIf="pincodeControl.errors.required">
-                            Pincode is required
-                        </div>
-                        <div *ngIf="pincodeControl.errors.pattern">
-                            Pincode should be numeric
-                        </div>
-                        <div *ngIf="pincodeControl.errors.maxlength">
-                            Pincode should be six digits
-                        </div>
-                        <div *ngIf="pincodeControl.errors.minlength">
-                            Pincode should be six digits
-                        </div>
+                <div *ngIf="pincodeControl.errors && pincodeControl.touched" class="invalid-feedback">
+                    <div *ngIf="pincodeControl.errors.required">
+                        Pincode is required
                     </div>
+                    <div *ngIf="pincodeControl.errors.pattern">
+                        Pincode should be numeric
+                    </div>
+                    <div *ngIf="pincodeControl.errors.maxlength">
+                        Pincode should be six digits
+                    </div>
+                    <div *ngIf="pincodeControl.errors.minlength">
+                        Pincode should be six digits
+                    </div>
+                </div>
             </div>
             <div class="col-lg-6">
-                <button type="button" id="close_button" class="close" data-dismiss="modal" (click)="getUserLocationData(box.value)" class="btn btn-light">Apply</button>
+                <button type="button" id="close_button" class="close" data-dismiss="modal"
+                    (click)="getUserLocationData(box.value)" class="btn btn-light">Apply</button>
             </div>
         </div>
     </div>
 </div>
-
-

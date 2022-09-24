@@ -38,7 +38,5 @@ export class NotificationInterceptor implements HttpInterceptor {
           return throwError(errorMessage);
         })
       )
-
-  }
-
+}
 }

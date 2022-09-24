@@ -13,17 +13,16 @@ export function createTranslateLoader(http: HttpClient) {
     CommonModule,
     HttpClientModule,
     TranslateModule.forRoot({
-      loader:{
+      loader: {
         provide: TranslateLoader,
         useFactory: createTranslateLoader,
         deps: [HttpClient],
       }
     })
   ],
-  exports:[
+  exports: [
     HttpClientModule,
     TranslateModule,
-
   ]
 })
 export class LangTranslateModule { }

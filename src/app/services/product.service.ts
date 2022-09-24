@@ -10,8 +10,6 @@ import { categoryData } from 'src/app/shared/dataset';
 export class ProductService {
 
   constructor(private http: HttpClient) { }
-  
-
   products1(): Observable<productData[]> {
     return this.http.get<productData[]>("assets/data/json/featuredProduct.json");
   }
@@ -21,7 +19,7 @@ export class ProductService {
   menu(): Observable<categoryData> {
     return this.http.get<categoryData>("assets/data/json/category.json");
   }
-  products(): Observable<products>{
-  return this.http.get<products>("assets/products/pro.json");
-}
+  products(): Observable<products> {
+    return this.http.get<products>("assets/products/pro.json");
+  }
 }

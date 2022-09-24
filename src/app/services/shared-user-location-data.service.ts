@@ -5,13 +5,13 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class SharedUserLocationDataService {
- 
+
   private userLoctionData = new Subject<any>();
   userLocation$ = this.userLoctionData.asObservable();
 
   constructor() { }
- sendLocation(location: any){
-    this.userLoctionData.next(location); 
+  sendLocation(location: any) {
+    this.userLoctionData.next(location);
     localStorage.setItem('Data', JSON.stringify(location));
   }
 }

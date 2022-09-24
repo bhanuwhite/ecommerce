@@ -1,9 +1,9 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { CurrentLocationService } from 'src/app/services/current-location.service';
 import { SharedUserLocationDataService } from 'src/app/services/shared-user-location-data.service';
-import {  FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef,MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
+
 
 
 @Component({
@@ -12,28 +12,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./pop-up.component.css']
 })
 export class PopUPComponent implements OnInit {
-
   userLocationData!: string;
   data!: any;
+  submitted: boolean = false;
   pincodeControl: any = new FormControl('', [Validators.required,
   Validators.maxLength(6),
   Validators.minLength(6),
- Validators.pattern(/^[0-9_]+$/)]);
-
-  submitted: boolean= false;
+  Validators.pattern(/^[0-9_]+$/)]);
   constructor(
-    private route: Router,
-  public dialogRef: MatDialogRef<PopUPComponent>,
+    public dialogRef: MatDialogRef<PopUPComponent>,
     public currentLocationService: CurrentLocationService,
     private sharedUserLocationData: SharedUserLocationDataService) {
   }
   ngOnInit(): void {
 
   }
-  
-  
   public getUserLocationData(pincode: string) {
-    if(this.pincodeControl.invalid){
+    if (this.pincodeControl.invalid) {
       return
     }
     this.currentLocationService.getUserLocationData(pincode).subscribe(data => {
@@ -42,9 +37,9 @@ export class PopUPComponent implements OnInit {
     })
     this.dialogRef.close();
   }
-  public close(){
+  public close() {
     this.dialogRef.close();
-}
+  }
 }
 
 
