@@ -146,7 +146,7 @@ input[type=text] {
     list-style-type: none;
     align-items: center;
     padding: 1px 5px 1px 5px;
-    margin: 0 0 0 10px;
+    margin: 0 0 0 -9px;
 }
 
 .item {

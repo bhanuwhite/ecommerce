@@ -9,18 +9,16 @@ import { CurrentLocationService } from 'src/app/services/current-location.servic
 })
 export class AddAddressPageComponent implements OnInit {
   public addressForm!: FormGroup;
-  userCity!: string;
-  userState!: string;
-  userLocation: any;
-  userLocationData: any;
-  pincode: any;
-  data: any;
-  City: any;
-  State: any;
+  public userCity!: string;
+  public userState!: string;
+  public userLocation: any;
+  public userLocationData: any;
+  public pincode: any;
+  public data: any;
+  public City!: string;
+  public State!: string;
 
-
-
-  constructor(private formBuilder: FormBuilder, private currentLocationService: CurrentLocationService) {
+    constructor(private formBuilder: FormBuilder, private currentLocationService: CurrentLocationService) {
 
     this.userLocation = localStorage.getItem("Data")
     this.userLocationData = JSON.parse(this.userLocation)
@@ -45,7 +43,6 @@ export class AddAddressPageComponent implements OnInit {
       console.log(this.data, "address");
       this.City = this.data[0].PostOffice[1].District;
       this.State = this.data[0].PostOffice[1].State;
-      console.log(this.data[0].PostOffice[1].State);
     })
   }
 }

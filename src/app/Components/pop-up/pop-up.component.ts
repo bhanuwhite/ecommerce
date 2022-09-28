@@ -12,13 +12,15 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./pop-up.component.css']
 })
 export class PopUPComponent implements OnInit {
-  userLocationData!: string;
-  data!: any;
-  submitted: boolean = false;
-  pincodeControl: any = new FormControl('', [Validators.required,
+  public userLocationData!: string;
+  public data!: any;
+  public submitted: boolean = false;
+
+  public pincodeControl: any = new FormControl('', [Validators.required,
   Validators.maxLength(6),
   Validators.minLength(6),
   Validators.pattern(/^[0-9_]+$/)]);
+  
   constructor(
     public dialogRef: MatDialogRef<PopUPComponent>,
     public currentLocationService: CurrentLocationService,

@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { productData } from 'src/app/shared/dataset';
 import { ProductService } from 'src/app/services/product.service';
 import { categoryData } from 'src/app/shared/dataset';
@@ -16,19 +16,17 @@ import { Router } from '@angular/router';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css']
 })
-export class HomePageComponent implements OnInit{
-  userLocationData!: any;
+export class HomePageComponent implements OnInit {
+  userLocationData: any;
   public items!: productData[];
   public items1!: productData[];
   public menuitems!: categoryData[];
   public subMenu!: menuList[];
-  public totalItem: number=0;
+  public totalItem: number = 0;
   public isDialogueOpen!: boolean;
-  searchTerm: string ="";
-  loading!: boolean;
-  error!: string;
-  selectAddress:any;
-  ShowLocation:any;
+  searchTerm: string = "";
+  userState!: string;
+  userCity!: string;
 
   constructor(private route: Router,
     public api: ProductService,
@@ -36,11 +34,10 @@ export class HomePageComponent implements OnInit{
     public translateService: TranslateService,
     private dialogRef: MatDialog,
     private sharedUserLocationData: SharedUserLocationDataService,
-    ) {
-  }
- 
-  ngOnInit(): void {    
-  this.translateService.addLangs(['en', 'hn']);
+  ) {}
+
+  ngOnInit(): void {
+    this.translateService.addLangs(['en', 'hn']);
     this.translateService.setDefaultLang('en');
     this.translateService.use('en')
 
@@ -48,7 +45,7 @@ export class HomePageComponent implements OnInit{
       this.items = data;
       this.items.forEach((a: productData) => {
         Object.assign(a)
- });
+      });
     });
     this.api.products2().subscribe((data) => {
       this.items1 = data;
@@ -67,31 +64,32 @@ export class HomePageComponent implements OnInit{
     });
     this.getUserLocationData();
   }
-
   public getUserLocationData() {
-      this.sharedUserLocationData.userLocation$
+    this.sharedUserLocationData.userLocation$
       .subscribe((userLocation) => {
-          this.userLocationData= userLocation[0].PostOffice[1].State;
+        this.userState =  userLocation[0].PostOffice[1].District;
+        this.userCity =  userLocation[0].PostOffice[1].State;
+        this.userLocationData = (this.userState + " ," + this.userCity)
+        console.log(this.userLocationData);
       });
   }
-  public selectLanguage(lang: string) {
-    this.translateService.use(lang) 
+  public selectLanguage(lang: string){
+    this.translateService.use(lang)
     console.log(lang);
   }
- 
   public addtoCart1(product: productData) {
     this.cartservice.addtoCart1(product);
-    this.totalItem+=1;
+    this.totalItem += 1;
   }
   public addtoCart2(product: productData) {
     this.cartservice.addtoCart2(product);
-    this.totalItem+=1;
+    this.totalItem += 1;
   }
   public openDialog() {
     this.dialogRef.open(PopUPComponent);
   }
- public sendUserSearchTerm(){
-this.route.navigate(['./products'],{queryParams:{data:this.searchTerm}})
-}
+  public sendUserSearchTerm() {
+    this.route.navigate(['./products'], { queryParams: { data: this.searchTerm } })
+  }
 }
 
