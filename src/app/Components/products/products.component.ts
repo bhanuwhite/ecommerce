@@ -12,6 +12,7 @@ export class ProductsComponent implements OnInit {
   productslist!: any;
   searchKey: string = "";
   public sortedArray: any = [];
+  clickedMenu: any;
 
   constructor(private route: ActivatedRoute,
     public api: ProductService,
@@ -22,7 +23,7 @@ export class ProductsComponent implements OnInit {
       console.log(this.productslist, "productslist");
       this.sorting();
     });
-  }
+  } 
  ngOnInit(): void {
 
   }
@@ -44,4 +45,6 @@ export class ProductsComponent implements OnInit {
       }
     })
   }
+
+
 }

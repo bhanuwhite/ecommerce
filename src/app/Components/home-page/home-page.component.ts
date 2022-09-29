@@ -91,5 +91,7 @@ export class HomePageComponent implements OnInit {
   public sendUserSearchTerm() {
     this.route.navigate(['./products'], { queryParams: { data: this.searchTerm } })
   }
+ 
+
 }
 

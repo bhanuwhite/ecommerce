@@ -113,7 +113,7 @@
         <div>
             <ul class="nav-sec-item">
                 <li *ngFor="let category of menuitems">
-                    <a routerLink="./products" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                    <a  class="nav-link"  routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
                         *ngIf="!category.isDropDownMenu">{{category.name.toLowerCase()|translate}}</a>
                     <div class="dropdown" *ngIf="category.isDropDownMenu">
                         <a routerLink="./products" class="nav-link  dopDown-toggle" data-toggle="dropDown" aria-haspopup="true"

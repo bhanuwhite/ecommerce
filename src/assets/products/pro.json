@@ -96,15 +96,13 @@
     
     {
       "category": "Womens",
-
-      "imgurl": "assets/images/wo.3.jpg",
+       "imgurl": "assets/images/wo.3.jpg",
       "title": "Womens",
       "price": "600.00",
       "qty": 1
     },
     {
       "category": "Womens",
-
       "imgurl": "assets/images/wo.2.jpg",
       "title": "Womens",
       "price": "600.00",
@@ -113,9 +111,107 @@
     
     {
       "category": "Jewellery",
-
       "imgurl": "assets/images/je.2.jpg",
       "title": "jewellery",
+      "price": "600.00",
+      "qty": 1
+    },
+    
+    {
+      "category": "watches",
+      "imgurl": "assets/images/watch1.jpg",
+      "title": "watches",
+      "price": "600.00",
+      "qty": 1
+    },
+    {
+      "category": "watches",
+      "imgurl": "assets/images/watch2.jpg",
+      "title": "watches",
+      "price": "600.00",
+      "qty": 1
+    },
+    {
+      "category": "watches",
+      "imgurl": "assets/images/watch3.jpg",
+      "title": "watches",
+      "price": "600.00",
+      "qty": 1
+    },
+    {
+      "category": "book",
+      "imgurl": "assets/images/book1.jpg",
+      "title": "book",
+      "price": "600.00",
+      "qty": 1
+    },
+    {
+      "category": "book",
+      "imgurl": "assets/images/book2.jpg",
+      "title": "book",
+      "price": "600.00",
+      "qty": 1
+    },
+    {
+      "category": "book",
+      "imgurl": "assets/images/book3.jpg",
+      "title": "book",
+      "price": "600.00",
+      "qty": 1
+    },
+    {
+      "category": "book",
+      "imgurl": "assets/images/book4.jpg",
+      "title": "book",
+      "price": "600.00",
+      "qty": 1
+    },
+    {
+      "category": "book",
+      "imgurl": "assets/images/book2.jpg",
+      "title": "book",
+      "price": "600.00",
+      "qty": 1
+    },
+    {
+      "category": "grocery",
+      "imgurl": "assets/images/gro1.jpg",
+      "title": "grocery",
+      "price": "600.00",
+      "qty": 1
+    },
+    {
+      "category": "grocery",
+      "imgurl": "assets/images/gro2.jpg",
+      "title": "grocery",
+      "price": "600.00",
+      "qty": 1
+    },
+    {
+      "category": "grocery",
+      "imgurl": "assets/images/gro3.jpg",
+      "title": "grocery",
+      "price": "600.00",
+      "qty": 1
+    },
+    {
+      "category": "grocery",
+      "imgurl": "assets/images/gro4.jpg",
+      "title": "grocery",
+      "price": "600.00",
+      "qty": 1
+    },
+    {
+      "category": "grocery",
+      "imgurl": "assets/images/gro5.jpg",
+      "title": "grocery",
+      "price": "600.00",
+      "qty": 1
+    },
+    {
+      "category": "grocery",
+      "imgurl": "assets/images/gro6.jpg",
+      "title": "grocery",
       "price": "600.00",
       "qty": 1
     }
