@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CartServiceService } from 'src/app/services/cart-service.service';
 import { ProductService } from 'src/app/services/product.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { ShareMenuItemsService } from 'src/app/services/share-menu-items.service';
 
 @Component({
   selector: 'app-products',
@@ -13,19 +13,37 @@ export class ProductsComponent implements OnInit {
   searchKey: string = "";
   public sortedArray: any = [];
   clickedMenu: any;
+  clickedSubMenu: any;
 
   constructor(private route: ActivatedRoute,
     public api: ProductService,
-    public cartservice: CartServiceService,
+    public shareMenuItems: ShareMenuItemsService,
   ) {
     this.api.products().subscribe((data) => {
       this.productslist = data;
       console.log(this.productslist, "productslist");
       this.sorting();
-    });
+    }); 
   } 
  ngOnInit(): void {
+  this.getMenu();
+  this.getSubMenu();
 
+  }
+  public getMenu(){
+    this.shareMenuItems.menuItems$.subscribe(res=>{
+      this.clickedMenu = res;
+      if(this.clickedMenu.name ===this.productslist.category){
+          
+      }
+      console.log(this.clickedMenu.name);
+    })
+  }
+  public getSubMenu(){
+    this.shareMenuItems.subMenuItems$.subscribe(res=>{
+      this.clickedSubMenu = res;
+      console.log(this.clickedSubMenu);
+    })
   }
   public sorting() {
     this.route.queryParams.subscribe((params: any) => {

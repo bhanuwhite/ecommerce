@@ -112,17 +112,17 @@
     <div class="categories-sec">
         <div>
             <ul class="nav-sec-item">
-                <li *ngFor="let category of menuitems">
-                    <a  class="nav-link"  routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                <li *ngFor="let category of menuitems" (click)="selectMenu(category)">
+                    <a  class="nav-link"  routerLinkActive="active"  [routerLinkActiveOptions]="{ exact: true }"
                         *ngIf="!category.isDropDownMenu">{{category.name.toLowerCase()|translate}}</a>
                     <div class="dropdown" *ngIf="category.isDropDownMenu">
-                        <a routerLink="./products" class="nav-link  dopDown-toggle" data-toggle="dropDown" aria-haspopup="true"
+                        <a class="nav-link  dopDown-toggle" data-toggle="dropDown" aria-haspopup="true"
                             aria-expanded="">{{category.name.toLowerCase()|translate}}</a>
                         <div class="dropDownMenu" aria-labelledby="navBardropDown">
                             <div class="dropdown-content" *ngFor="let menuList of category.subMenu; let i=index">
-                                <a routerLink="./products" class="dropDown-item" routerLinkActive="active"
+                                <a routerLink="./products" (click)="getSubMenu(category,menuList.data1)" class="dropDown-item" routerLinkActive="active"
                                     [routerLinkActiveOptions]="{ exact: true }">{{menuList.data1|translate}}</a>
-                                <a  routerLink="./products" class="dropDown-item" routerLinkActive="active"
+                                <a  routerLink="./products" (click)="getSubMenu(category,menuList.data2)" class="dropDown-item" routerLinkActive="active"
                                     [routerLinkActiveOptions]="{ exact: true }">{{menuList.data2|translate}}</a>
                             </div>
                         </div>

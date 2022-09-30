@@ -7,11 +7,12 @@ import { productData } from '../shared/dataset';
   providedIn: 'root'
 })
 export class CartServiceService {
+
   public cartItemList: productData[] = [];
   public items = new BehaviorSubject<productData[]>([]);
   public items1 = new BehaviorSubject<productData[]>([]);
 
-  constructor() { }
+constructor() { }
   getProducts1() {
     return this.items.asObservable();
   }
@@ -35,5 +36,6 @@ export class CartServiceService {
     this.cartItemList.push(product);
     this.items1.next(this.cartItemList);
   }
+   
 }
 
