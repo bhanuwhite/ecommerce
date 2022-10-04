@@ -9,7 +9,6 @@ import { PopUPComponent } from '../pop-up/pop-up.component';
 import { MatDialog } from '@angular/material/dialog';
 import { SharedUserLocationDataService } from 'src/app/services/shared-user-location-data.service';
 import { Router } from '@angular/router';
-import { ShareMenuItemsService } from 'src/app/services/share-menu-items.service';
 
 
 @Component({
@@ -35,7 +34,7 @@ export class HomePageComponent implements OnInit {
     public translateService: TranslateService,
     private dialogRef: MatDialog,
     private sharedUserLocationData: SharedUserLocationDataService,
-    private shareMenuItems: ShareMenuItemsService
+    
   ) {}
 
   ngOnInit(): void {
@@ -69,6 +68,8 @@ export class HomePageComponent implements OnInit {
   public getUserLocationData() {
     this.sharedUserLocationData.userLocation$
       .subscribe((userLocation) => {
+        console.log(userLocation);
+        
         this.userState =  userLocation[0].PostOffice[1].District;
         this.userCity =  userLocation[0].PostOffice[1].State;
         this.userLocationData = (this.userState + " ," + this.userCity)
@@ -93,12 +94,11 @@ export class HomePageComponent implements OnInit {
   public sendUserSearchTerm() {
     this.route.navigate(['./products'], { queryParams: { data: this.searchTerm } })
   }
-  public selectMenu(category:any){
-    this.shareMenuItems.sendSelectMenu(category);
-}
-getSubMenu(category:any,selectedSubMenu:any){
-  let data = { category : category , selectedsubmenu : selectedSubMenu }
-  this.shareMenuItems.sendSelectSubMenu(data);
+  selectMenu(category:any){
+    this.route.navigate(['./products'], { queryParams: { data: category } })
+  }
+  getSubMenu(category:string,selectedSubMenu:string){
+  this.route.navigate(['./products'], { queryParams: { data: category,selectedSubMenu } })
 }
 }
 

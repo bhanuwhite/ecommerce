@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { ActivatedRoute } from '@angular/router';
-import { ShareMenuItemsService } from 'src/app/services/share-menu-items.service';
 
 @Component({
   selector: 'app-products',
@@ -9,41 +8,49 @@ import { ShareMenuItemsService } from 'src/app/services/share-menu-items.service
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  productslist!: any;
+  productslist: any = [];
   searchKey: string = "";
   public sortedArray: any = [];
-  clickedMenu: any;
-  clickedSubMenu: any;
+  subMenu: string = '';
+  menu: string = '';
+  items: any;
+  menuData: any = [];
+  subMenuData: any = [];
+
 
   constructor(private route: ActivatedRoute,
     public api: ProductService,
-    public shareMenuItems: ShareMenuItemsService,
-  ) {
+  ) { }
+  ngOnInit(): void {
+    this.getProducts()
+    this.getSubMenu()
+  }
+  public getProducts() {
     this.api.products().subscribe((data) => {
       this.productslist = data;
-      console.log(this.productslist, "productslist");
+      this.productslist.forEach((a: any) => {
+        Object.assign(a)
+      })
       this.sorting();
-    }); 
-  } 
- ngOnInit(): void {
-  this.getMenu();
-  this.getSubMenu();
+      this.getMenu();
+     this.getSubMenu()
+    });
+  }
 
-  }
-  public getMenu(){
-    this.shareMenuItems.menuItems$.subscribe(res=>{
-      this.clickedMenu = res;
-      if(this.clickedMenu.name ===this.productslist.category){
-          
-      }
-      console.log(this.clickedMenu.name);
+  public getMenu() {
+    this.route.queryParams.subscribe((params: any) => {
+      this.menu = params.data
+      this.menuData = this.productslist
+        .filter((x: any) => {
+          return x.category.toLowerCase().includes(this.menu.toLowerCase());
+        })
+      console.log(this.menuData)
     })
   }
-  public getSubMenu(){
-    this.shareMenuItems.subMenuItems$.subscribe(res=>{
-      this.clickedSubMenu = res;
-      console.log(this.clickedSubMenu);
-    })
+public getSubMenu() {
+    this.route.queryParams.subscribe((params: any) => {
+      this.subMenu = params.data
+     })
   }
   public sorting() {
     this.route.queryParams.subscribe((params: any) => {
@@ -63,6 +70,8 @@ export class ProductsComponent implements OnInit {
       }
     })
   }
+  public filter() {
 
 
+  }
 }

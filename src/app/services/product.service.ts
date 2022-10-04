@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable ,Subject } from 'rxjs';
 import { productData, products } from 'src/app/shared/dataset';
 import { categoryData } from 'src/app/shared/dataset';
 
@@ -9,7 +9,11 @@ import { categoryData } from 'src/app/shared/dataset';
 })
 export class ProductService {
 
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient) { 
+    
+  }
+
   products1(): Observable<productData[]> {
     return this.http.get<productData[]>("assets/data/json/featuredProduct.json");
   }
