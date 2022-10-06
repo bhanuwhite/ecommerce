@@ -10,13 +10,12 @@ import { MatDialog } from '@angular/material/dialog';
 import { SharedUserLocationDataService } from 'src/app/services/shared-user-location-data.service';
 import { Router } from '@angular/router';
 
-
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
-export class HomePageComponent implements OnInit {
+export class HeaderComponent implements OnInit {
   userLocationData: any;
   public items!: productData[];
   public items1!: productData[];
@@ -24,18 +23,17 @@ export class HomePageComponent implements OnInit {
   public subMenu!: menuList[];
   public totalItem: number = 0;
   public isDialogueOpen!: boolean;
-  searchTerm: string = "";
+  searchTerm: any;
   userState!: string;
   userCity!: string;
+  
 
   constructor(private route: Router,
     public api: ProductService,
     public cartservice: CartServiceService,
     public translateService: TranslateService,
     private dialogRef: MatDialog,
-    private sharedUserLocationData: SharedUserLocationDataService,
-
-  ) { }
+    private sharedUserLocationData: SharedUserLocationDataService,) { }
 
   ngOnInit(): void {
     this.translateService.addLangs(['en', 'hn']);
@@ -47,7 +45,6 @@ export class HomePageComponent implements OnInit {
     this.getSubMenuItem();
     this.getUserLocationData();
   }
-
   public getFeaturedProducts() {
     this.api.products1().subscribe((data) => {
       this.items = data;
@@ -110,4 +107,7 @@ export class HomePageComponent implements OnInit {
     this.route.navigate(['./products'], { queryParams: { data: selectedSubMenu } })
   }
 }
+
+
+
 

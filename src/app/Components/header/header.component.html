@@ -1,0 +1,134 @@
+<div class="main-sec">
+    <div class="header-sec">
+        <div class="left-header">
+            <ul class="logo-container">
+                <li>
+                    <a href="#">
+                        <img class="header-img mr-2" src="assets/images/img1.png">
+                    </a>
+                </li>
+            </ul>
+            <ul class="search-container">
+                <li class="search-group">
+                    <form class="search-icon-form">
+                <div class="nav-left">
+                    <div class="nav-search">
+                        <span class="nav-search-label">
+                             <i class="fa fa-caret-down" aria-hidden="true"></i>
+                        </span>
+                    <select class="nav-search-dropdown">
+                        <option>{{'all'|translate}}</option>
+                        <option>{{'men'|translate}}</option>
+                        <option>{{'women'|translate}}</option>
+                        <option>{{'electronics'|translate}}</option>
+                        <option>{{'furniture'|translate}}</option>
+                        <option>{{'books'|translate}}</option> 
+                        <option>{{'watches'|translate}}</option>
+                        <option>{{'jewellery'|translate}}</option> 
+                        <option>{{'groceries'|translate}}</option>
+                    </select> 
+                </div>
+            </div>
+                <div class="nav-fill">
+                    <div class="nav-search-field">
+                       <input type="text" class="nav-input" name="search" placeholder="{{'search_products_here'|translate}}" [(ngModel)]="searchTerm"> 
+                    </div>
+                </div>
+                <div class="nav-right">
+                    <div class="nav-search-submit">
+                      <span class="nav-submit-text"  (click)="sendUserSearchTerm()">
+                        <i class="fa fa-search fa-lg header-icon" aria-hidden="true"></i>
+                      </span>  
+                    </div>
+                </div>
+                    </form>
+                </li>
+            </ul>
+        </div>
+        <div class="account-sec">
+            <ul>
+                <div class="location">
+                    <li #box>
+                        <a (click)="openDialog()">
+                            <span>
+                                <p class="loc-text"><i class="fa fa-map-marker location-icon" 
+                                    aria-hidden="true"></i>{{(userLocationData?userLocationData:'select_address')|translate}}
+                                </p>
+                            </span>
+                        </a>
+                    </li>
+                </div>
+                <span class="item">|</span>
+                <div class="dropdown">
+                    <button type="button" class="lang" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{'en'|translate}}<i class="fa fa-sort-desc lang-icon eng-dropdown" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a (click)="selectLanguage('en')" class="dropdown-item" href="#">English</a>
+                      <a (click)="selectLanguage('hn')" class="dropdown-item" href="#">Hindi</a>
+                    </div>
+                  </div>
+                  <span class="item">|</span>  
+                <li><a href="" class="sell">{{'sell'|translate}}</a><span class="item">|</span></li>
+                <li>
+                    <div class="dropdown">
+                        <button type="button" class="lang" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-user mr-2" aria-hidden="true"></i>
+                            {{'account'|translate}}<i class="fa fa-sort-desc lang-icon eng-dropdown" aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-menu account-menu" aria-labelledby="dropdownMenuButton">
+                            <div class="account-section">
+                            <h5 class="acc-heading">Account</h5>
+                            <p>Manage Cart,Orders & Wishlist</p>
+                            <div class="signup-button">
+                            <button routerLink="./loginPage" class="acc-button">Sign In</button>
+                            <button  routerLink="./signUp" class="acc-button">Sign Up</button>
+                            </div>
+                     </div>
+                        </div>
+                      </div>
+                  <span class="item">
+                        |</span>
+                </li>
+                <ul class="dropdown-list account guest">
+                    <li *ngIf="isDialogueOpen">
+                        <div class="modal-dialog">
+                            <label class="account-text"></label>
+                        </div>
+                        <div class="mt-2"><span class="cart-text">Manage Cart, Orders & Wishlist</span></div>
+                        <div class="">
+                            <a href="" class="btn btn-sec">Sign In </a>
+                            <a href="" class="btn btn-sec">Sign Up </a>
+                        </div>
+                    </li>
+                </ul>
+
+                <li><i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i><a
+                        routerLink="./cartPage">{{'cart'|translate}}({{totalItem}})</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="categories-sec">
+        <div>
+            <ul class="nav-sec-item">
+                <li *ngFor="let category of menuitems" (click)="selectMenu(category.name)">
+                    <a class="nav-link"  routerLinkActive="active"  [routerLinkActiveOptions]="{ exact: true }"
+                        *ngIf="!category.isDropDownMenu">{{category.name.toLowerCase()|translate}}</a>
+                    <div class="dropdown" *ngIf="category.isDropDownMenu">
+                        <a   class="nav-link  dopDown-toggle" data-toggle="dropDown" aria-haspopup="true"
+                            aria-expanded="">{{category.name.toLowerCase()|translate}}</a>
+                        <div class="dropDownMenu" aria-labelledby="navBardropDown">
+                            <div class="dropdown-content" *ngFor="let menuList of category.subMenu; let i=index">
+                                <a  (click)="getSubMenu(menuList.data1)" class="dropDown-item" routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }">{{menuList.data1|translate}}</a>
+                                <a   (click)="getSubMenu(menuList.data2)" class="dropDown-item" routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{ exact: true }">{{menuList.data2|translate}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -19,28 +19,6 @@ export class CartPageComponent implements OnInit {
   constructor(public api: ProductService, public cartservice: CartServiceService) { }
 
   ngOnInit(): void {
-    this.api.products2().subscribe((data) => {
-      this.items = data;
-      console.log(data, 'str')
-      this.items.forEach((a: productData) => {
-        Object.assign(a)
-      });
-    });
-    this.api.products2().subscribe((data) => {
-      this.items1 = data;
-      console.log(data, 'str')
-      this.items.forEach((a: productData) => {
-        Object.assign(a)
-      });
-    });
-    this.api.menu().subscribe((data: categoryData) => {
-      this.menuitems = data.subMenu;
-      console.log(data, 'str, boolean')
-    });
-    this.api.menu().subscribe((data: categoryData) => {
-      this.subMenu = data.subMenu;
-      console.log(data, 'str')
-    });
     this.cartservice.getProducts1()
       .subscribe((res: productData[]) => {
         this.products = res;
@@ -49,6 +27,37 @@ export class CartPageComponent implements OnInit {
       .subscribe((res: productData[]) => {
         this.products = res;
       })
+  }
+  
+  public getFeaturedProducts() {
+    this.api.products2().subscribe((data) => {
+      this.items = data;
+      console.log(data, 'str')
+      this.items.forEach((a: productData) => {
+        Object.assign(a)
+      });
+    });
+  }
+  public getNewProducts() {
+    this.api.products2().subscribe((data) => {
+      this.items1 = data;
+      console.log(data, 'str')
+      this.items.forEach((a: productData) => {
+        Object.assign(a)
+      });
+    });
+  }
+  public getMenuItem() {
+    this.api.menu().subscribe((data: categoryData) => {
+      this.menuitems = data.subMenu;
+      console.log(data, 'str, boolean')
+    });
+  }
+  public getSubMenuItem() {
+    this.api.menu().subscribe((data: categoryData) => {
+      this.subMenu = data.subMenu;
+      console.log(data, 'str')
+    });
   }
   public toggleDialogueModel() {
     this.isDialogueOpen = !this.isDialogueOpen;

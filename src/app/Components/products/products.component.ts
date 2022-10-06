@@ -9,9 +9,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductsComponent implements OnInit {
   productslist: any = [];
-  searchKey: string = "";
-  public sortedArray: any = [];
-  subMenu: string = '';
+  searchKey: any;
+  public sortedArray: any = []; 
+   subMenu: string = '';
   menu: string = '';
   items: any;
   menuData: any = [];
@@ -23,23 +23,21 @@ export class ProductsComponent implements OnInit {
   ) { }
   ngOnInit(): void {
     this.getProducts()
-    this.getSubMenu()
+    // this.getSubMenu()
   }
   public getProducts() {
-    this.api.products().subscribe((data) => {
+    this.api.products().subscribe((data) => { 
       this.productslist = data;
       this.productslist.forEach((a: any) => {
         Object.assign(a)
       })
       this.sorting();
       this.getMenu();
-     this.getSubMenu()
-    });
+});
   }
-
   public getMenu() {
     this.route.queryParams.subscribe((params: any) => {
-      this.menu = params.data
+      this.menu = params.data      
       this.menuData = this.productslist
         .filter((x: any) => {
           return x.category.toLowerCase().includes(this.menu.toLowerCase());
@@ -47,10 +45,11 @@ export class ProductsComponent implements OnInit {
       console.log(this.menuData)
     })
   }
-public getSubMenu() {
+  public getSubMenu() {
     this.route.queryParams.subscribe((params: any) => {
       this.subMenu = params.data
-     })
+      console.log(this.subMenu);
+    })
   }
   public sorting() {
     this.route.queryParams.subscribe((params: any) => {
@@ -69,9 +68,5 @@ public getSubMenu() {
         }
       }
     })
-  }
-  public filter() {
-
-
   }
 }

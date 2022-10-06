@@ -7,7 +7,7 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LangTranslateModule } from './lang-translate/lang-translate.module';
 import { PopUPComponent } from './Components/pop-up/pop-up.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotificationInterceptor } from './services/notification.interceptor';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AddAddressPageComponent } from './Components/add-address-page/add-address-page.component';
@@ -23,6 +23,7 @@ import { AddAddressPageComponent } from './Components/add-address-page/add-addre
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule,
     NoopAnimationsModule,
     LangTranslateModule,
