@@ -75,53 +75,53 @@
     "id": "10",
     "category": "Male",
     "imgurl": "assets/images/bottomwear1.jpg",
-    "title": "Shirt",
+    "title": "Bottom Wear",
     "price": "900.00",
     "qty": 1
   },
   {
-    "id": "10",
-    "category": "Male",
+    "id": "11",
+    "category": "BottomWear",
     "imgurl": "assets/images/bottomwear2.jpg",
-    "title": "Shirt",
+    "title": "Bottom Wear",
     "price": "900.00",
     "qty": 1
   },
   {
-    "id": "10",
-    "category": "Male",
+    "id": "12",
+    "category": "BottomWear",
     "imgurl": "assets/images/bottomwear3.jpg",
-    "title": "Shirt",
+    "title": "Bottom Wear",
     "price": "900.00",
     "qty": 1
   },
   {
-    "id": "10",
-    "category": "Male",
+    "id": "13",
+    "category": "BottomWear",
     "imgurl": "assets/images/bottomwear4.jpg",
-    "title": "Shirt",
+    "title": "Bottom Wear",
     "price": "900.00",
     "qty": 1
   },
   
   {
-    "id": "12",
-    "category": "Womens",
+    "id": "14",
+    "category": "WesternWear",
     "imgurl": "assets/images/wo.3.jpg",
     "title": "Women Dress",
     "price": "600.00",
     "qty": 1
   },
   {
-    "id": "13",
-    "category": "Womens",
+    "id": "15",
+    "category": "WesternWear",
     "imgurl": "assets/images/wo.6.jpg",
     "title": "Dress",
     "price": "600.00",
     "qty": 1
   },
   {
-    "id": "14",
+    "id": "16",
     "category": "Womens",
     "imgurl": "assets/images/wo.3.jpg",
     "title": "Womens",
@@ -129,15 +129,15 @@
     "qty": 1
   },
   {
-    "id": "15",
-    "category": "Womens",
+    "id": "17",
+    "category": "Western Wear",
     "imgurl": "assets/images/wo.2.jpg",
     "title": "Womens",
     "price": "600.00",
     "qty": 1
   },
   {
-    "id": "16",
+    "id": "18",
     "category": "Jewellery",
     "imgurl": "assets/images/je.2.jpg",
     "title": "jewellery",
@@ -145,7 +145,7 @@
     "qty": 1
   },
   {
-    "id": "17",
+    "id": "19",
     "category": "watches",
     "imgurl": "assets/images/watch1.jpg",
     "title": "watches",
@@ -153,7 +153,7 @@
     "qty": 1
   },
   {
-    "id": "18",
+    "id": "20",
     "category": "watches",
     "imgurl": "assets/images/watch2.jpg",
     "title": "watches",
@@ -161,7 +161,7 @@
     "qty": 1
   },
   {
-    "id": "19",
+    "id": "21",
     "category": "watches",
     "imgurl": "assets/images/watch3.jpg",
     "title": "watches",
@@ -169,7 +169,7 @@
     "qty": 1
   },
   {
-    "id": "20",
+    "id": "22",
     "category": "Books",
     "imgurl": "assets/images/book1.jpg",
     "title": "book",
@@ -177,25 +177,9 @@
     "qty": 1
   },
   {
-    "id": "21",
-    "category": "Books",
-    "imgurl": "assets/images/book2.jpg",
-    "title": "book",
-    "price": "600.00",
-    "qty": 1
-  },
-  {
-    "id": "22",
-    "category": "Books",
-    "imgurl": "assets/images/book3.jpg",
-    "title": "book",
-    "price": "600.00",
-    "qty": 1
-  },
-  {
     "id": "23",
     "category": "Books",
-    "imgurl": "assets/images/book4.jpg",
+    "imgurl": "assets/images/book2.jpg",
     "title": "book",
     "price": "600.00",
     "qty": 1
@@ -203,7 +187,7 @@
   {
     "id": "24",
     "category": "Books",
-    "imgurl": "assets/images/book2.jpg",
+    "imgurl": "assets/images/book3.jpg",
     "title": "book",
     "price": "600.00",
     "qty": 1
@@ -236,14 +220,6 @@
     "id": "28",
     "category": "Groceries",
     "imgurl": "assets/images/gro4.jpg",
-    "title": "grocery",
-    "price": "600.00",
-    "qty": 1
-  },
-  {
-    "id": "28",
-    "category": "Groceries",
-    "imgurl": "assets/images/gro5.jpg",
     "title": "grocery",
     "price": "600.00",
     "qty": 1
@@ -308,7 +284,7 @@
   {
     "id": "36",
     "category": "TopWear",
-    "imgurl": "assets/images/shirt3.jpg",
+    "imgurl": "assets/images/kurta.jpg",
     "title": "Shirt",
     "price": "800.00",
     "qty": 1
@@ -324,7 +300,7 @@
       "qty": 1
     },
     {
-      "id": "10",
+      "id": "38",
       "category": "Electronics",
       "imgurl": "assets/images/mob3.jpg",
       "title": "Shirt",
@@ -332,7 +308,7 @@
       "qty": 1
     },
     {
-      "id": "10",
+      "id": "39",
       "category": "Electronics",
       "imgurl": "assets/images/mob1.jpg",
       "title": "Shirt",
@@ -340,7 +316,7 @@
       "qty": 1
     },
     {
-      "id": "10",
+      "id": "40",
       "category": "Electronics",
       "imgurl": "assets/images/mob2.jpg",
       "title": "Shirt",
@@ -348,10 +324,34 @@
       "qty": 1
     },
     {
-      "id": "10",
+      "id": "41",
       "category": "Mobiles",
       "imgurl": "assets/images/mob4.jpg",
       "title": "Shirt",
+      "price": "900.00",
+      "qty": 1
+    },
+    {
+      "id": "42",
+      "category": "Headphones",
+      "imgurl": "assets/images/headph1.jpg",
+      "title": "HeadPhone",
+      "price": "900.00",
+      "qty": 1
+    },
+    {
+      "id": "43",
+      "category": "Headphones",
+      "imgurl": "assets/images/headph2.png",
+      "title": "HeadPhone",
+      "price": "900.00",
+      "qty": 1
+    },
+    {
+      "id": "44",
+      "category": "Headphones",
+      "imgurl": "assets/images/headph3.jpg",
+      "title": "HeadPhone",
       "price": "900.00",
       "qty": 1
     }

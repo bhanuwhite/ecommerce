@@ -21,4 +21,9 @@ export interface products{
     price: number; 
     qty: number;
 }
+export interface menuData{
+    id: number;
+    category: string;
+    data: string;
+}
 

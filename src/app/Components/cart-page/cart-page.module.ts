@@ -13,6 +13,7 @@ import { CartPageComponent } from './cart-page.component';
   imports: [
     CommonModule,
     CartPageRoutingModule,
+    
   ]
 })
 export class CartPageModule { }

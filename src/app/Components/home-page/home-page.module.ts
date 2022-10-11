@@ -11,14 +11,12 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { HeaderComponent } from '../header/header.component';
 
 
 
 @NgModule({
   declarations: [
     HomePageComponent,
-    HeaderComponent
 
   ],
   imports: [

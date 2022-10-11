@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable ,Subject } from 'rxjs';
-import { productData, products } from 'src/app/shared/dataset';
+import { menuData, productData, products } from 'src/app/shared/dataset';
 import { categoryData } from 'src/app/shared/dataset';
 
 @Injectable({
@@ -25,5 +25,8 @@ export class ProductService {
   }
   products(): Observable<products> {
     return this.http.get<products>("assets/products/pro.json");
+  }
+  procategory(): Observable<menuData[]>{
+    return this.http.get<menuData[]>("assets/products/procategory.json");
   }
 }

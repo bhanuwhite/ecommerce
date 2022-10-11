@@ -1,0 +1,87 @@
+[
+        {
+            "id":"1",
+            "category": "Women",
+            "data": "Ethnic Wear"
+        },
+        {
+            "id":"2",
+            "category": "Women",
+            "data": "Foot Wear"
+        },
+        {
+            "id":"3",
+            "category": "Women",
+            "data": "Sleep Wear"
+        },
+        {
+            "id":"4",
+            "category": "Women",
+            "data": "Beauty and Grooming"
+        },
+        {
+            "id":"5",
+            "category": "Women",
+            "data": "Party Dresses"
+        },
+        {
+            "id":"6",
+            "category": "Women",
+            "data": "Trending"
+        },
+        {
+            "id":"7",
+            "category": "Women",
+            "data": "Accessories"
+        },
+        {
+            "id":"8",
+            "category": "Electronics",
+            "data": "Mobiles"
+        },
+        {
+            "id":"9",
+            "category": "Electronics",
+            "data": "Computer Peripherals"
+        }, 
+        {
+            "id":"10",
+            "category": "Electronics",
+            "data": "Laptops"
+        },
+        {
+            "id":"11",
+            "category": "Electronics",
+            "data": "Speakers"
+        },
+        {
+            "id":"12",
+            "category": "Electronics",
+            "data": "Smart Home Automation"
+        },
+        {
+            "id":"13",
+            "category": "Electronics",
+            "data": "Camera"
+        },
+        {
+            "id":"14",
+            "category": "Electronics",
+            "data": "Tablets"
+        },
+       {
+            "id":"15",
+            "category": "Furniture",
+            "data": "Bed Room Furniture"
+        },
+        {
+            "id":"16",
+            "category": "Furniture",
+            "data": "Living Room Furniture"
+        },
+        {
+            "id":"17",
+            "category": "Furniture",
+            "data": "Study Furniture"
+        }
+]

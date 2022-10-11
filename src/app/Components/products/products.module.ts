@@ -23,7 +23,7 @@ import { FilterPipe } from 'src/app/shared/filter.pipe';
     TranslateModule,
     MatDialogModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 })
 export class ProductsModule { }

@@ -7,7 +7,7 @@ const routes: Routes = [
   { path: 'cartPage', loadChildren: () => import('./Components/cart-page/cart-page.module').then(m => m.CartPageModule) },
   { path: 'products', loadChildren: () => import('./Components/products/products.module').then(m => m.ProductsModule) },
   { path: 'signUp', loadChildren: () => import('./Components/sign-up-form/sign-up-form.module').then(m => m.SignUpFormModule) },
-  { path: 'address-page', component: AddAddressPageComponent }
+  { path: 'address-page', component: AddAddressPageComponent },
   
 
 ];

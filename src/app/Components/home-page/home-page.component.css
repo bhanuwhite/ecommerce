@@ -112,7 +112,7 @@ input[type=text] {
     background-color: #f1f1f1;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 10;
   }
   .dropdown-content a {
     color: black;
@@ -233,7 +233,6 @@ input[type=text] {
     background: 0 0;
     color: #111;
     outline: 0;
-    -webkit-appearance: none;
     box-shadow: none;
     text-indent: 8px
 }
@@ -309,24 +308,20 @@ input[type=text] {
     display: block;
     color: #242424;
     text-decoration: none;
-    padding: 0.8em 0.3em 0.8em 0.5em;
     text-transform: capitalize;
     letter-spacing: -.38px;
+    margin-top: 5px;
     position: relative;
-
 }
-
 .right-header-menu ul .account {
     position: absolute;
     right: 0;
 }
-
 .right-content-menu ul.dropdown-list li {
     border-right: none;
     padding: 20px;
     display: block;
 }
-
 .dropdown-list .account-text {
     color: rgb(158, 158, 158);
     font-weight: 700;
@@ -365,11 +360,6 @@ input[type=text] {
 
 }
 
-/* .guest{
-    width: 300px !important;
- 
- } */
-
 .dropdown-content {
     display: none;
     position: absolute;
@@ -377,7 +367,7 @@ input[type=text] {
     min-width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     padding: 10px 10px;
-    z-index: 1;
+    z-index: 10;
 }
 
 .dropdown:hover .dropdown-content {

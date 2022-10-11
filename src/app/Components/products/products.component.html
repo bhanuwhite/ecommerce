@@ -1,22 +1,148 @@
-<div class="products-container">
-    <div class="sec-section">
-        <hr class="product-line">
-        <div class="row">
-            <div class="col-lg-3" *ngFor="let product of productslist  && sortedArray && menuData">
-                <mat-card>
-                    <mat-card-content class="product-card">
-                        <img mat-card-image [src]="product.imgurl">
-                        <p class="product-name"><a href=""></a>{{product.title}}</p>
-                        <div class="sticker">
+<div class="main-sec">
+    <div class="header-sec">
+        <div class="left-header">
+            <ul class="logo-container">
+                <li>
+                    <a href="#">
+                        <img class="header-img mr-2" src="assets/images/img1.png">
+                    </a>
+                </li>
+            </ul>
+            <ul class="search-container">
+                <li class="search-group">
+                    <form class="search-icon-form">
+                        <div class="nav-left">
+                            <div class="nav-search">
+                                <span class="nav-search-label">
+                                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                </span>
+                                <select class="nav-search-dropdown">
+                                    <option>{{'all'|translate}}</option>
+                                    <option>{{'men'|translate}}</option>
+                                    <option>{{'women'|translate}}</option>
+                                    <option>{{'electronics'|translate}}</option>
+                                    <option>{{'furniture'|translate}}</option>
+                                    <option>{{'books'|translate}}</option>
+                                    <option>{{'watches'|translate}}</option>
+                                    <option>{{'jewellery'|translate}}</option>
+                                    <option>{{'groceries'|translate}}</option>
+                                </select>
+                            </div>
                         </div>
-                        <p class="price">${{product.price}}</p>
-                    </mat-card-content>
-                    <mat-card-footer>
-                        <button class="cart-button" type="submit">{{'AddCart'|
-                            translate}}</button>
-                    </mat-card-footer>
-                </mat-card>
+                        <div class="nav-fill">
+                            <div class="nav-search-field">
+                                <input type="text" class="nav-input" name="search"
+                                    placeholder="{{'search_products_here'|translate}}" [(ngModel)]="searchTerm">
+                            </div>
+                        </div>
+                        <div class="nav-right">
+                            <div class="nav-search-submit">
+                                <span class="nav-submit-text">
+                                    <i class="fa fa-search fa-lg header-icon" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+        </div>
+        <div class="account-sec">
+            <ul>
+                <div class="location">
+                    <li #box>
+                        <a (click)="openDialog()">
+                            <span>
+                                <p class="loc-text"><i class="fa fa-map-marker location-icon"
+                                        aria-hidden="true"></i>{{(userLocationData?userLocationData:'select_address')|translate}}
+                                </p>
+                            </span>
+                        </a>
+                    </li>
+                </div>
+                <span class="item">|</span>
+                <div class="dropdown">
+                    <button type="button" class="lang" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        {{'en'|translate}}<i class="fa fa-sort-desc lang-icon eng-dropdown" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a (click)="selectLanguage('en')" class="dropdown-item" href="#">English</a>
+                        <a (click)="selectLanguage('hn')" class="dropdown-item" href="#">Hindi</a>
+                    </div>
+                </div>
+                <span class="item">|</span>
+                <li><a href="" class="sell">{{'sell'|translate}}</a><span class="item">|</span></li>
+                <li>
+                    <div class="dropdown">
+                        <button type="button" class="lang" id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-user mr-2" aria-hidden="true"></i>
+                            {{'account'|translate}}<i class="fa fa-sort-desc lang-icon eng-dropdown"
+                                aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-menu account-menu" aria-labelledby="dropdownMenuButton">
+                            <div class="account-section">
+                                <h5 class="acc-heading">Account</h5>
+                                <p>Manage Cart,Orders & Wishlist</p>
+                                <div class="signup-button">
+                                    <button routerLink="./loginPage" class="acc-button">Sign In</button>
+                                    <button routerLink="./signUp" class="acc-button">Sign Up</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="item">
+                        |</span>
+                </li>
+                <ul class="dropdown-list account guest">
+                    <li *ngIf="isDialogueOpen">
+                        <div class="modal-dialog">
+                            <label class="account-text"></label>
+                        </div>
+                        <div class="mt-2"><span class="cart-text">Manage Cart, Orders & Wishlist</span></div>
+                        <div class="">
+                            <a href="" class="btn btn-sec">Sign In </a>
+                            <a href="" class="btn btn-sec">Sign Up </a>
+                        </div>
+                    </li>
+                </ul>
+
+                <li><i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i><a
+                        routerLink="./cartPage">{{'cart'|translate}}({{totalItem}})</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="categories-sec">
+        <div>
+            <ul class="nav-sec-item">
+                <li *ngFor="let category of categoryItem">
+                    <a class="nav-link"  routerLinkActive="active"  [routerLinkActiveOptions]="{ exact: true }"
+                        >{{category.data.toLowerCase()|translate}}</a>
+                 </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="products-container">
+        <div class="sec-section">
+            <hr class="product-line">
+            <div class="row">
+                <div class="col-lg-3" *ngFor="let product of productslist  && sortedArray && menuData">
+                    <mat-card>
+                        <mat-card-content class="product-card">
+                            <img mat-card-image [src]="product.imgurl" width="100%">
+                            <p class="product-name"><a href=""></a>{{product.title}}</p>
+                            <div class="sticker">
+                            </div>
+                            <p class="price">${{product.price}}</p>
+                        </mat-card-content>
+                        <mat-card-footer>
+                            <button class="cart-button" type="submit">{{'AddCart'|
+                                translate}}</button>
+                        </mat-card-footer>
+                    </mat-card>
+                </div>
             </div>
         </div>
- </div>
+    </div>
 </div>
